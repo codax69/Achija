@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Achija Jewellers | The Silver Heritage Standard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#001233",
+                    "error": "#ffb4ab",
+                    "surface-variant": "#22345a",
+                    "inverse-primary": "#5d5e5f",
+                    "tertiary-fixed-dim": "#c8c6c3",
+                    "inverse-on-surface": "#1d2f55",
+                    "on-primary": "#2f3131",
+                    "on-primary-fixed": "#1a1c1c",
+                    "tertiary-container": "#20211f",
+                    "on-primary-fixed-variant": "#454747",
+                    "on-background": "#d9e2ff",
+                    "on-error": "#690005",
+                    "surface-container-high": "#16294e",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "on-surface": "#d9e2ff",
+                    "surface-container-low": "#041a3f",
+                    "surface": "#001233",
+                    "on-tertiary-fixed": "#1b1c1a",
+                    "on-error-container": "#ffdad6",
+                    "secondary": "#c6c6c6",
+                    "secondary-fixed": "#e3e2e2",
+                    "error-container": "#93000a",
+                    "primary": "#c6c6c6",
+                    "on-secondary-container": "#b8b8b8",
+                    "on-tertiary-fixed-variant": "#474744",
+                    "outline": "#8f9099",
+                    "surface-bright": "#26385e",
+                    "on-secondary-fixed-variant": "#464747",
+                    "surface-container-highest": "#22345a",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-primary-container": "#878888",
+                    "primary-container": "#1f2121",
+                    "primary-fixed": "#e2e2e2",
+                    "surface-container-lowest": "#000d29",
+                    "background": "#001233",
+                    "tertiary-fixed": "#e4e2de",
+                    "surface-container": "#091e43",
+                    "tertiary": "#c8c6c3",
+                    "outline-variant": "#44464e",
+                    "on-surface-variant": "#c5c6cf",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-tertiary": "#30312e",
+                    "secondary-container": "#484949",
+                    "surface-tint": "#c6c6c6",
+                    "on-tertiary-container": "#898885",
+                    "inverse-surface": "#d9e2ff",
+                    "on-secondary": "#2f3131"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .silver-gradient-text {
+            background: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .silver-border {
+            border: 1px solid;
+            border-image-source: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
+            border-image-slice: 1;
+        }
+        .velvet-depth {
+            background: radial-gradient(circle at center, #0A1F44 0%, #001233 100%);
+        }
+        ::-webkit-scrollbar {
+            height: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #001233;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #22345A;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-none bg-[#001233]/60 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-none">
+<a href="index.html" class="text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0]">Achija Jewellers</a>
+<div class="hidden md:flex items-center gap-10 font-['Noto_Serif'] font-medium tracking-tight text-[#C6C6C6]">
+<a class="text-white border-b border-[#D8D8D8] pb-1" href="collections.html">Collections</a>
+<a class="text-[#C6C6C6]/70 hover:text-white transition-colors" href="legacy.html">About</a>
+<a class="text-[#C6C6C6]/70 hover:text-white transition-colors" href="inquiry.html">Inquiry</a>
+</div>
+<div class="flex items-center gap-6 text-[#C6C6C6]">
+<button class="hover:scale-[1.02] transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="hover:scale-[1.02] transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 velvet-depth overflow-hidden">
+<div class="container mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+<div class="z-10">
+<span class="label-md uppercase tracking-[0.1em] text-primary opacity-80 mb-6 block">Established Heritage</span>
+<h1 class="text-6xl md:text-8xl font-headline tracking-[-0.02em] leading-tight mb-8 silver-gradient-text">
+                        Pure Silver.<br/>Timeless Presence.
+                    </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-md mb-12 font-light leading-relaxed">
+                        Exquisite hand-crafted masterpieces designed for those who command a room with silent elegance.
+                    </p>
+<div class="flex items-center gap-8">
+<button class="silver-border px-10 py-4 text-primary uppercase tracking-[0.1em] text-xs font-semibold hover:shadow-[0_0_20px_rgba(192,192,192,0.2)] transition-all duration-300">
+                            Explore Silver Collection
+                        </button>
+</div>
+</div>
+<div class="relative flex justify-center items-center">
+<div class="absolute w-[120%] h-[120%] bg-surface-bright/10 blur-[120px] rounded-full"></div>
+<img alt="Silver Bracelet" class="relative z-10 w-full max-w-xl object-contain filter drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]" data-alt="Close-up of a high-end intricate solid silver bracelet resting on dark navy velvet with dramatic spotlighting and metallic reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcuGLBwbuOFdeW0o3U9fPkQX71iwW3ZA4rBrVoTdeB8r_RH0MohwnVfeMQITcoGEbTretaKJl-ozAfdiEUdORaRf1QWZ7sdS54sigF6VYSGZ1rdpSUDW1p1fC4JrMPJcJe9AkJuJu6sMgb5n6lW5OH4fOv-xQ8vSm3Fbsu0q15hbFOkT0OPdXeMpB5haVwpX8jCLvG1jEu0-afR_QfbVy5YODYeN1CW2eg_16ymvvURO6zxYfHrB5r_BZoy_SZAqcq-WCvHagumbxa"/>
+</div>
+</div>
+</section>
+<!-- Featured Collections (Asymmetric Grid) -->
+<section class="py-32 bg-surface">
+<div class="container mx-auto px-12">
+<div class="flex flex-col mb-20">
+<h2 class="text-4xl font-headline mb-4">The Collections</h2>
+<div class="w-24 h-[1px] bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Rings -->
+<div class="md:col-span-7 group cursor-pointer overflow-hidden">
+<div class="relative aspect-[16/9] mb-6 bg-surface-container-high overflow-hidden">
+<img alt="Silver Rings" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Set of minimalist silver rings displayed on a polished dark stone surface with sharp architectural shadows and bright highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaAsl-HYdJLjLNT-em1W23VHAyTu4QHGmOkXrdX9Tigng3pZVN9m5b_xTeVI_V7-5zUa3CwT2yh-vP-IssJAMASopvbm8t7q9OULDJqSlfOpbqGnwcoaPfExsaJckxoEYCgfp18BobKTpZ-B6K95INHSj74if3SCWW1fybQj-hukFjAvE5CSgF1RlLT1nOSjh23goT5pjlmCKatMMGFxYPwaPSasw5enqetThPXubScRqhjN90XR9dPPR_pHkP_MmEwpf7cMyhxRrD"/>
+<div class="absolute bottom-8 left-8">
+<h3 class="text-3xl font-headline text-white mb-2">Rings</h3>
+<span class="label-md uppercase tracking-[0.1em] text-primary/70">Sculpted Form</span>
+</div>
+</div>
+</div>
+<!-- Chains -->
+<div class="md:col-span-5 group cursor-pointer overflow-hidden mt-12 md:mt-24">
+<div class="relative aspect-[4/5] mb-6 bg-surface-container-high overflow-hidden">
+<img alt="Silver Chains" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Solid silver cuban link chain against a deep indigo background, high contrast lighting showing the texture of every link." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb9BXbc1eCwZ9G26woaFJiigrGNtnPRGpI0XyxoVcq3-lZOWid-DnAjYzM6Lu07gJ7GcNZOHnjIw4RceCpJD9aL1N3IDRWK4bbZjKBgvJWff9OOyRP0L9WtuXmGVguMq-JucnTAxN8MUh47TOMoeEq7DYR4i7mC7EwlJ6XxbgeLPuaNl6GgzpdpbGK1dvrPtowvfTLs1TM-ZyVi_rrZGC92jYuXixyrfi7zIao_AOws7l3pdWU_iQLbC8xYgHmCi_f4RCzqjaRyiV5"/>
+<div class="absolute bottom-8 left-8">
+<h3 class="text-3xl font-headline text-white mb-2">Chains</h3>
+<span class="label-md uppercase tracking-[0.1em] text-primary/70">Heritage Links</span>
+</div>
+</div>
+</div>
+<!-- Bracelets -->
+<div class="md:col-span-5 group cursor-pointer overflow-hidden -mt-12 md:-mt-24">
+<div class="relative aspect-[4/5] mb-6 bg-surface-container-high overflow-hidden">
+<img alt="Silver Bracelets" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Artisan silver cuffs and bracelets on a dark reflective surface, showcasing hand-engraved patterns and polished surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2aQ4lpA0MQWRu-SHjDeXqvHOxV3-_6ONAxpL7VqtjkSgc9xUp_y2ixgx0w-j_2AYaheL1eEczZi7z2JvRnuI0JzwXHr0Oa3GjdTWs0RLEmX7fBbJTUrRV4PYVSlTETjWnDdYbqbJzQqBUshcDGIerEf6MsPTu2PtLMWY3M6cIzlJaVD2pYrdNtrQDW0IiRlzZsE26BAubFb57teZAS22HqhkiTCyhVzBpQSthu08ciIyh_sf29D0OS41tCZL4-wLFHnjZ0Xtok-4D"/>
+<div class="absolute bottom-8 left-8">
+<h3 class="text-3xl font-headline text-white mb-2">Bracelets</h3>
+<span class="label-md uppercase tracking-[0.1em] text-primary/70">Fluid Strength</span>
+</div>
+</div>
+</div>
+<!-- Anklets -->
+<div class="md:col-span-7 group cursor-pointer overflow-hidden">
+<div class="relative aspect-[16/9] mb-6 bg-surface-container-high overflow-hidden">
+<img alt="Silver Anklets" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Delicate silver anklet with small bells and charms, lying gracefully on a piece of dark silk fabric with soft light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzz3OO2wSEcQVCoHeT5vHZrV-ep08DbPGEZxoJ6kWpD5dgRqzWtDHosPFIqZraE1AZKC6PGgvSZh6VgtijWm8pDmQ1bn6gEMlXM0m86rXkAe44NfYI7_GCym9AETyxyriywSjsjo2VjrgsYvFFj0k_fKSOMIANsXAAKhdITur9N-E4gbaLjuk4pouZQe0TvjRELwkxHTLR51XOmP8xNVuOhbXiE3Z3TMUypLApu2TfyYkz6UdhdkNxNg-gtI_0-fqL0MOn3c4c1wIF"/>
+<div class="absolute bottom-8 left-8">
+<h3 class="text-3xl font-headline text-white mb-2">Anklets</h3>
+<span class="label-md uppercase tracking-[0.1em] text-primary/70">Subtle Grace</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Best Sellers (Horizontal Scroll) -->
+<section class="py-32 bg-surface-container-low">
+<div class="container mx-auto px-12">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="text-4xl font-headline mb-4">Curated Classics</h2>
+<p class="text-on-surface-variant font-light tracking-wide">The pieces our collectors cherish most.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 flex items-center justify-center silver-border text-primary/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center silver-border text-primary/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-8 overflow-x-auto pb-12 snap-x hide-scrollbar">
+<!-- Product 1 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-start group">
+<div class="bg-surface p-8 mb-6 relative overflow-hidden h-[450px] flex items-center justify-center">
+<img alt="The Imperial Ring" class="max-w-[80%] h-auto grayscale transition-all duration-500 group-hover:scale-110" data-alt="Heavy silver signet ring with an embossed architectural pattern, isolated on a deep blue studio background with focused lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmkwxvD-_T7OytRFCtGkyxlBgpcW2__gG8oDBHZA94mVVHHusjRGbPl2sSTXDpH_K6CCja_Onb1EocTSXDLZ0TGDmJnd6izpDGRciuAcC0IXCybE7LgTM5JjTv14fI1tGaKjQUjBk8GxvzIE528MdJCvIut6uB35mEIIYkzf0DS4SfK5GKlYrg5m2Y4BGnzWAIqJyeXAtBK-Z9xKlkIiFYAnRGCbybhecMjuN3alUREySROHhE_TeSdhDXCdOjziBLz7-M_NtmpkfQ"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-xl font-headline mb-1">The Imperial Ring</h4>
+<p class="text-xs uppercase tracking-widest text-primary/60">Sterling 925</p>
+</div>
+<span class="text-lg silver-gradient-text font-medium">₹19,200</span>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-start group">
+<div class="bg-surface p-8 mb-6 relative overflow-hidden h-[450px] flex items-center justify-center">
+<img alt="Lunar Cuff" class="max-w-[80%] h-auto grayscale transition-all duration-500 group-hover:scale-110" data-alt="Wide hammered silver cuff bracelet with a matte finish, reflecting soft ambient light on a dark velvet surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9oV20W-xdEfSGrPntzPASKQ-RbBsQsUYRGRrtEgLQm5yTOJvfAA_z2d4SQh51uQdJ67ixGKHlQD-BxAWxwIZOzHALtas2Zwa-3xs8JNPhzOCVck5nsfl48efuTItTaMm0B6TNK3xGVRL8Fb_hJatiUFdhKwIT-K7pNzg2BOPyOVDD9LLx4guQ6IZYDeb7HTrAraHD-QhcebmepiJI4yBlLDV0TnvWXdKqnYzN0iOAG2Q1-Nq6xHnCFdhYUhH0yjTUCFl3OaAZZ1sX"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-xl font-headline mb-1">Lunar Cuff</h4>
+<p class="text-xs uppercase tracking-widest text-primary/60">Satin Finish Silver</p>
+</div>
+<span class="text-lg silver-gradient-text font-medium">₹32,800</span>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-start group">
+<div class="bg-surface p-8 mb-6 relative overflow-hidden h-[450px] flex items-center justify-center">
+<img alt="Observer Chain" class="max-w-[80%] h-auto grayscale transition-all duration-500 group-hover:scale-110" data-alt="Fine silver chain necklace with a singular polished silver sphere pendant, dramatic side lighting creating a long shadow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2F_1qzr6QuU7CndfEHFyVFi3gQ9QjAk-6f37JE7VJZvmtTpF_XA5LeoMEh6dVxo6Fmkk4b2pvD55xfo6jKHfbBPqcJEqbX46Ye9pFFhd4c7mCB3GE69q8ANlnX8xMvz1BfKqeP4JcavY43ipNzJFc_SKKI7fn_BgGQMcZY0GKOTFbhHy9nJJEoRxnZrub65JzaKc8pb6LHyPcHmxYY-G-sNizSzuihIPo07nNl8Mu3PipQERfcMxd2V4iTj-2L4RQgXRpdDHm7WV5"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="text-xl font-headline mb-1">Observer Chain</h4>
+<p class="text-xs uppercase tracking-widest text-primary/60">Hand-Linked Silver</p>
+</div>
+<span class="text-lg silver-gradient-text font-medium">₹25,600</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Philosophy -->
+<section class="py-40 relative overflow-hidden">
+<div class="absolute inset-0 velvet-depth opacity-50"></div>
+<div class="container mx-auto px-12 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="order-2 md:order-1">
+<img alt="Craftsmanship" class="w-full grayscale border border-outline-variant/10" data-alt="Black and white close-up of a silversmith's hands working with traditional tools on a delicate piece of silver jewelry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCZT_RQAo4lwzStzGBP1DXJ4MivTdnsk4TL_rNuN66ceqxRo0K8BcuMHZkSCqbCNc92yb7sAgN__u9fvy1MJdY8j3-yDSD-4zqurncTOsNH3aA2thS2N3g_jDNrd1A89b777aizJShx-WwPqmd0FmnmXYYRUNGi9WCwzeuVEDWzcAidGn9G-4umzoCo1Xaw1Sn8X16pihyDynV_8MZR8leEx3Nys3Eu8YqUuHEK5dF5_12f7HCgigfTq5_ID8H0MfLiqHIE1VflBaM"/>
+</div>
+<div class="order-1 md:order-2">
+<h2 class="text-5xl font-headline mb-10 leading-tight">The Silver Standard of Purity.</h2>
+<div class="space-y-8">
+<div>
+<h4 class="text-xs uppercase tracking-[0.2em] text-primary mb-2 font-bold">Uncompromising Quality</h4>
+<p class="text-on-surface-variant font-light leading-relaxed">Every piece at Achija starts with the highest grade .925 sterling silver, meticulously tested for brilliance and weight.</p>
+</div>
+<div>
+<h4 class="text-xs uppercase tracking-[0.2em] text-primary mb-2 font-bold">Generational Craft</h4>
+<p class="text-on-surface-variant font-light leading-relaxed">Our artisans utilize centuries-old techniques, blending heritage motifs with contemporary architectural silhouettes.</p>
+</div>
+<div>
+<h4 class="text-xs uppercase tracking-[0.2em] text-primary mb-2 font-bold">Timeless Design</h4>
+<p class="text-on-surface-variant font-light leading-relaxed">We believe jewelry shouldn't just be worn; it should be inherited. We design for longevity, not for seasons.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial -->
+<section class="py-32 bg-surface-container-highest">
+<div class="container mx-auto px-12 max-w-4xl text-center">
+<span class="material-symbols-outlined text-4xl text-primary/30 mb-8" data-weight="fill">format_quote</span>
+<p class="text-2xl md:text-3xl font-headline italic leading-relaxed text-white mb-10">
+                    "There is a weight and a temperature to Achija silver that you simply don't find elsewhere. It feels like a piece of history resting against your skin."
+                </p>
+<div class="w-12 h-[1px] bg-primary mx-auto mb-6"></div>
+<h5 class="label-md uppercase tracking-[0.2em] text-primary">Eleanor Sterling</h5>
+<p class="text-[10px] uppercase tracking-[0.1em] text-on-surface-variant mt-2">Private Collector</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col items-center gap-12 w-full bg-[#041A3F] py-20 px-12">
+<a href="index.html" class="text-xl font-['Noto_Serif'] text-[#C6C6C6]">Achija Jewellers</a>
+<div class="flex flex-wrap justify-center gap-8 md:gap-16 font-['Inter'] tracking-[0.1em] uppercase text-[0.75rem]">
+<a class="text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="collections.html">Collections</a>
+<a class="text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="legacy.html">Legacy</a>
+<a class="text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="inquiry.html">Inquiry</a>
+<a class="text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="privacy_terms.html">Privacy</a>
+<a class="text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="privacy_terms.html">Terms</a>
+</div>
+<div class="mt-8 border-t border-white/5 pt-12 w-full flex flex-col items-center">
+<p class="font-['Inter'] tracking-[0.1em] uppercase text-[0.7rem] text-[#C6C6C6]/40">
+                © 2024 Achija Jewellers. The Silver Heritage Standard.
+            </p>
+</div>
+</footer>
+<script src="features.js"></script>
+</body></html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#001233",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#22345a",
+                        "inverse-primary": "#5d5e5f",
+                        "tertiary-fixed-dim": "#c8c6c3",
+                        "inverse-on-surface": "#1d2f55",
+                        "on-primary": "#2f3131",
+                        "on-primary-fixed": "#1a1c1c",
+                        "tertiary-container": "#20211f",
+                        "on-primary-fixed-variant": "#454747",
+                        "on-background": "#d9e2ff",
+                        "on-error": "#690005",
+                        "surface-container-high": "#16294e",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-surface": "#d9e2ff",
+                        "surface-container-low": "#041a3f",
+                        "surface": "#001233",
+                        "on-tertiary-fixed": "#1b1c1a",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#c6c6c6",
+                        "secondary-fixed": "#e3e2e2",
+                        "error-container": "#93000a",
+                        "primary": "#c6c6c6",
+                        "on-secondary-container": "#b8b8b8",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "outline": "#8f9099",
+                        "surface-bright": "#26385e",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface-container-highest": "#22345a",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-primary-container": "#878888",
+                        "primary-container": "#1f2121",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-container-lowest": "#000d29",
+                        "background": "#001233",
+                        "tertiary-fixed": "#e4e2de",
+                        "surface-container": "#091e43",
+                        "tertiary": "#c8c6c3",
+                        "outline-variant": "#44464e",
+                        "on-surface-variant": "#c5c6cf",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-tertiary": "#30312e",
+                        "secondary-container": "#484949",
+                        "surface-tint": "#c6c6c6",
+                        "on-tertiary-container": "#898885",
+                        "inverse-surface": "#d9e2ff",
+                        "on-secondary": "#2f3131"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .silver-gradient-text {
+            background: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .silver-border {
+            border: 1px solid transparent;
+            background-image: linear-gradient(#001233, #001233), linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        .silver-glow:hover {
+            box-shadow: 0 0 15px rgba(216, 216, 216, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-none bg-[#001233]/60 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-none">
+<a href="index.html" class="text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0]">
+            Achija Jewellers
+        </a>
+<div class="hidden md:flex items-center gap-10 font-['Noto_Serif'] font-medium tracking-tight">
+<a class="text-white border-b border-[#D8D8D8] pb-1 hover:scale-[1.02] transition-transform duration-300" href="collections.html">Collections</a>
+<a class="text-[#C6C6C6]/70 hover:text-white transition-colors hover:scale-[1.02] transition-transform duration-300" href="legacy.html">About</a>
+<a class="text-[#C6C6C6]/70 hover:text-white transition-colors hover:scale-[1.02] transition-transform duration-300" href="inquiry.html">Inquiry</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button class="text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-12 max-w-[1600px] mx-auto min-h-screen">
+<header class="mb-20">
+<h1 class="text-5xl font-headline font-bold tracking-tight mb-4 silver-gradient-text">Sterling Curations</h1>
+<p class="text-on-surface-variant max-w-lg font-body tracking-[0.05em] leading-relaxed">
+                Explore our signature collection of 925 Sterling Silver, where heritage craftsmanship meets contemporary visual silence.
+            </p>
+</header>
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Filters Sidebar -->
+<aside class="w-full lg:w-64 space-y-12 flex-shrink-0">
+<section>
+<h3 class="font-label uppercase tracking-[0.1em] text-[0.75rem] text-primary mb-6">Category</h3>
+<ul class="space-y-4">
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="text-on-surface hover:text-white transition-colors tracking-wide">All Pieces</span>
+<span class="text-[0.65rem] text-outline">142</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="text-on-surface-variant hover:text-white transition-colors tracking-wide">Signature Rings</span>
+<span class="text-[0.65rem] text-outline">48</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="text-on-surface-variant hover:text-white transition-colors tracking-wide">Artisan Chains</span>
+<span class="text-[0.65rem] text-outline">32</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer">
+<span class="text-on-surface-variant hover:text-white transition-colors tracking-wide">Cuffs &amp; Bangles</span>
+<span class="text-[0.65rem] text-outline">26</span>
+</li>
+</ul>
+</section>
+<section>
+<h3 class="font-label uppercase tracking-[0.1em] text-[0.75rem] text-primary mb-6">Purity</h3>
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 silver-border flex items-center justify-center">
+<div class="w-2 h-2 bg-primary"></div>
+</div>
+<span class="text-on-surface tracking-wide">925 Sterling Silver</span>
+</div>
+</section>
+<section>
+<h3 class="font-label uppercase tracking-[0.1em] text-[0.75rem] text-primary mb-6">Price Range</h3>
+<div class="relative h-1 bg-outline-variant mt-8">
+<div class="absolute h-full bg-primary w-2/3"></div>
+<div class="absolute -top-1.5 left-0 w-4 h-4 bg-surface-bright silver-border"></div>
+<div class="absolute -top-1.5 left-2/3 w-4 h-4 bg-surface-bright silver-border"></div>
+</div>
+<div class="flex justify-between mt-4 font-label text-[0.7rem] text-on-surface-variant tracking-widest">
+<span>₹20,000</span>
+<span>₹2,00,000+</span>
+</div>
+</section>
+<button class="w-full py-4 silver-border text-primary font-label tracking-[0.2em] uppercase text-[0.7rem] hover:silver-glow transition-all duration-300">
+                    Apply Filters
+                </button>
+</aside>
+<!-- Product Grid -->
+<section class="flex-grow">
+<div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-20 gap-x-12">
+    <!-- Dynamic products will be injected here -->
+</div>
+<!-- Pagination -->
+<div class="mt-32 flex justify-center items-center gap-8">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-white transition-colors">arrow_back</span>
+<div id="pagination-container" class="flex gap-6 font-label text-[0.75rem] tracking-widest items-center">
+    <!-- Dynamic pagination will be generated here -->
+</div>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-white transition-colors">arrow_forward</span>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col items-center gap-12 w-full bg-[#041A3F] full-width py-20 px-12 flat no shadows">
+<a href="index.html" class="text-xl font-['Noto_Serif'] text-[#C6C6C6]">Achija Jewellers</a>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[0.75rem] text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="collections.html">Collections</a>
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[0.75rem] text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="legacy.html">Legacy</a>
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[0.75rem] text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="inquiry.html">Inquiry</a>
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[0.75rem] text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="privacy_terms.html">Privacy</a>
+<a class="font-['Inter'] tracking-[0.1em] uppercase text-[0.75rem] text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="privacy_terms.html">Terms</a>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-[#C6C6C6]/50 hover:text-white transition-colors cursor-pointer">public</span>
+<span class="material-symbols-outlined text-[#C6C6C6]/50 hover:text-white transition-colors cursor-pointer">filter_vintage</span>
+<span class="material-symbols-outlined text-[#C6C6C6]/50 hover:text-white transition-colors cursor-pointer">auto_awesome</span>
+</div>
+<p class="font-['Inter'] tracking-[0.1em] uppercase text-[0.65rem] text-[#C6C6C6]/30 text-center">
+            © 2024 Achija Jewellers. The Silver Heritage Standard.
+        </p>
+</footer>
+<script src="products.js"></script>
+<script src="features.js"></script>
+</body></html>
