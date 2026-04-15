@@ -14,23 +14,23 @@
         theme: {
           extend: {
             "colors": {
-                    "surface-dim": "#001233",
+                    "surface-dim": "#010815",
                     "error": "#ffb4ab",
-                    "surface-variant": "#22345a",
+                    "surface-variant": "#0d1b2e",
                     "inverse-primary": "#5d5e5f",
                     "tertiary-fixed-dim": "#c8c6c3",
-                    "inverse-on-surface": "#1d2f55",
+                    "inverse-on-surface": "#020c1b",
                     "on-primary": "#2f3131",
                     "on-primary-fixed": "#1a1c1c",
                     "tertiary-container": "#20211f",
                     "on-primary-fixed-variant": "#454747",
                     "on-background": "#d9e2ff",
                     "on-error": "#690005",
-                    "surface-container-high": "#16294e",
+                    "surface-container-high": "#0f203b",
                     "secondary-fixed-dim": "#c6c6c6",
                     "on-surface": "#d9e2ff",
-                    "surface-container-low": "#041a3f",
-                    "surface": "#001233",
+                    "surface-container-low": "#020c1b",
+                    "surface": "#010815",
                     "on-tertiary-fixed": "#1b1c1a",
                     "on-error-container": "#ffdad6",
                     "secondary": "#c6c6c6",
@@ -40,17 +40,17 @@
                     "on-secondary-container": "#b8b8b8",
                     "on-tertiary-fixed-variant": "#474744",
                     "outline": "#8f9099",
-                    "surface-bright": "#26385e",
+                    "surface-bright": "#1a365d",
                     "on-secondary-fixed-variant": "#464747",
-                    "surface-container-highest": "#22345a",
+                    "surface-container-highest": "#1c325c",
                     "on-secondary-fixed": "#1a1c1c",
                     "on-primary-container": "#878888",
                     "primary-container": "#1f2121",
                     "primary-fixed": "#e2e2e2",
-                    "surface-container-lowest": "#000d29",
-                    "background": "#001233",
+                    "surface-container-lowest": "#000000",
+                    "background": "#000000",
                     "tertiary-fixed": "#e4e2de",
-                    "surface-container": "#091e43",
+                    "surface-container": "#0a1930",
                     "tertiary": "#c8c6c3",
                     "outline-variant": "#44464e",
                     "on-surface-variant": "#c5c6cf",
@@ -77,68 +77,55 @@
         },
       }
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .silver-gradient-text {
-            background: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .silver-border {
-            border: 1px solid;
-            border-image-source: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
-            border-image-slice: 1;
-        }
-        .velvet-depth {
-            background: radial-gradient(circle at center, #0A1F44 0%, #001233 100%);
-        }
-        ::-webkit-scrollbar {
-            height: 4px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #001233;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #22345A;
-        }
-    </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-none bg-[#001233]/60 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-none">
-<a href="index.html" class="text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0]">Achija Jewellers</a>
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-none bg-[#010815]/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-none">
+<a href="index.html" class="text-xl md:text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0]">Achija Jewellers</a>
 <div class="hidden md:flex items-center gap-10 font-['Noto_Serif'] font-medium tracking-tight text-[#C6C6C6]">
-<a class="text-white border-b border-[#D8D8D8] pb-1" href="collections.html">Collections</a>
+<a class="text-[#C6C6C6]/70 hover:text-white transition-colors" href="collections.html">Collections</a>
 <a class="text-[#C6C6C6]/70 hover:text-white transition-colors" href="legacy.html">About</a>
 <a class="text-[#C6C6C6]/70 hover:text-white transition-colors" href="inquiry.html">Inquiry</a>
 </div>
-<div class="flex items-center gap-6 text-[#C6C6C6]">
-<button class="hover:scale-[1.02] transition-transform duration-300">
+<div class="flex items-center gap-4 text-[#C6C6C6]">
+<button class="hidden md:inline hover:scale-[1.02] transition-transform duration-300">
 <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
 </button>
-<button class="hover:scale-[1.02] transition-transform duration-300">
+<button class="hidden md:inline hover:scale-[1.02] transition-transform duration-300">
 <span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="hamburger-btn md:hidden" id="hamburger-btn" aria-label="Open menu">
+<span></span><span></span><span></span>
 </button>
 </div>
 </nav>
+<!-- Mobile Nav Drawer -->
+<div id="mobile-nav-drawer">
+<a href="collections.html">Collections</a>
+<a href="legacy.html">About</a>
+<a href="inquiry.html">Inquiry</a>
+<div class="mobile-nav-footer">
+<a href="privacy_terms.html">Privacy</a>
+<a href="privacy_terms.html">Terms</a>
+</div>
+</div>
 <main>
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center pt-20 velvet-depth overflow-hidden">
-<div class="container mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+<div class="container mx-auto px-4 sm:px-8 md:px-12 grid grid-cols-1 lg:grid-cols-2 items-center gap-8 md:gap-12">
 <div class="z-10">
 <span class="label-md uppercase tracking-[0.1em] text-primary opacity-80 mb-6 block">Established Heritage</span>
-<h1 class="text-6xl md:text-8xl font-headline tracking-[-0.02em] leading-tight mb-8 silver-gradient-text">
+<h1 class="text-4xl sm:text-6xl md:text-8xl font-headline tracking-[-0.02em] leading-tight mb-6 md:mb-8 silver-gradient-text">
                         Pure Silver.<br/>Timeless Presence.
                     </h1>
 <p class="text-lg md:text-xl text-on-surface-variant max-w-md mb-12 font-light leading-relaxed">
                         Exquisite hand-crafted masterpieces designed for those who command a room with silent elegance.
                     </p>
 <div class="flex items-center gap-8">
-<button class="silver-border px-10 py-4 text-primary uppercase tracking-[0.1em] text-xs font-semibold hover:shadow-[0_0_20px_rgba(192,192,192,0.2)] transition-all duration-300">
+<a href="collections.html" class="silver-border px-6 sm:px-10 py-3 sm:py-4 text-primary uppercase tracking-[0.1em] text-xs font-semibold hover:shadow-[0_0_20px_rgba(192,192,192,0.2)] transition-all duration-300">
                             Explore Silver Collection
-                        </button>
+                        </a>
 </div>
 </div>
 <div class="relative flex justify-center items-center">
@@ -149,7 +136,7 @@
 </section>
 <!-- Featured Collections (Asymmetric Grid) -->
 <section class="py-32 bg-surface">
-<div class="container mx-auto px-12">
+<div class="container mx-auto px-4 sm:px-8 md:px-12">
 <div class="flex flex-col mb-20">
 <h2 class="text-4xl font-headline mb-4">The Collections</h2>
 <div class="w-24 h-[1px] bg-outline-variant/30"></div>
@@ -200,17 +187,17 @@
 </section>
 <!-- Best Sellers (Horizontal Scroll) -->
 <section class="py-32 bg-surface-container-low">
-<div class="container mx-auto px-12">
-<div class="flex justify-between items-end mb-16">
+<div class="container mx-auto px-4 sm:px-8 md:px-12">
+<div class="flex flex-wrap justify-between items-end gap-4 mb-10 md:mb-16">
 <div>
-<h2 class="text-4xl font-headline mb-4">Curated Classics</h2>
-<p class="text-on-surface-variant font-light tracking-wide">The pieces our collectors cherish most.</p>
+<h2 class="text-3xl md:text-4xl font-headline mb-3">Curated Classics</h2>
+<p class="text-on-surface-variant font-light tracking-wide text-sm md:text-base">The pieces our collectors cherish most.</p>
 </div>
 <div class="flex gap-4">
-<button class="w-12 h-12 flex items-center justify-center silver-border text-primary/50 hover:text-primary transition-colors">
+<button class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center silver-border text-primary/50 hover:text-primary transition-colors">
 <span class="material-symbols-outlined">chevron_left</span>
 </button>
-<button class="w-12 h-12 flex items-center justify-center silver-border text-primary/50 hover:text-primary transition-colors">
+<button class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center silver-border text-primary/50 hover:text-primary transition-colors">
 <span class="material-symbols-outlined">chevron_right</span>
 </button>
 </div>
@@ -261,12 +248,12 @@
 <!-- Brand Philosophy -->
 <section class="py-40 relative overflow-hidden">
 <div class="absolute inset-0 velvet-depth opacity-50"></div>
-<div class="container mx-auto px-12 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="container mx-auto px-4 sm:px-8 md:px-12 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
 <div class="order-2 md:order-1">
 <img alt="Craftsmanship" class="w-full grayscale border border-outline-variant/10" data-alt="Black and white close-up of a silversmith's hands working with traditional tools on a delicate piece of silver jewelry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCZT_RQAo4lwzStzGBP1DXJ4MivTdnsk4TL_rNuN66ceqxRo0K8BcuMHZkSCqbCNc92yb7sAgN__u9fvy1MJdY8j3-yDSD-4zqurncTOsNH3aA2thS2N3g_jDNrd1A89b777aizJShx-WwPqmd0FmnmXYYRUNGi9WCwzeuVEDWzcAidGn9G-4umzoCo1Xaw1Sn8X16pihyDynV_8MZR8leEx3Nys3Eu8YqUuHEK5dF5_12f7HCgigfTq5_ID8H0MfLiqHIE1VflBaM"/>
 </div>
 <div class="order-1 md:order-2">
-<h2 class="text-5xl font-headline mb-10 leading-tight">The Silver Standard of Purity.</h2>
+<h2 class="text-3xl md:text-5xl font-headline mb-6 md:mb-10 leading-tight">The Silver Standard of Purity.</h2>
 <div class="space-y-8">
 <div>
 <h4 class="text-xs uppercase tracking-[0.2em] text-primary mb-2 font-bold">Uncompromising Quality</h4>
@@ -288,7 +275,7 @@
 <section class="py-32 bg-surface-container-highest">
 <div class="container mx-auto px-12 max-w-4xl text-center">
 <span class="material-symbols-outlined text-4xl text-primary/30 mb-8" data-weight="fill">format_quote</span>
-<p class="text-2xl md:text-3xl font-headline italic leading-relaxed text-white mb-10">
+<p class="text-xl md:text-3xl font-headline italic leading-relaxed text-white mb-8 md:mb-10">
                     "There is a weight and a temperature to Achija silver that you simply don't find elsewhere. It feels like a piece of history resting against your skin."
                 </p>
 <div class="w-12 h-[1px] bg-primary mx-auto mb-6"></div>
@@ -298,7 +285,7 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="flex flex-col items-center gap-12 w-full bg-[#041A3F] py-20 px-12">
+<footer class="flex flex-col items-center gap-8 md:gap-12 w-full bg-[#020c1b] py-16 md:py-20 px-6 md:px-12">
 <a href="index.html" class="text-xl font-['Noto_Serif'] text-[#C6C6C6]">Achija Jewellers</a>
 <div class="flex flex-wrap justify-center gap-8 md:gap-16 font-['Inter'] tracking-[0.1em] uppercase text-[0.75rem]">
 <a class="text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="collections.html">Collections</a>
@@ -313,5 +300,26 @@
             </p>
 </div>
 </footer>
+<script src="products.js"></script>
+<script src="cart.js"></script>
 <script src="features.js"></script>
+<script>
+(function(){
+  const btn = document.getElementById('hamburger-btn');
+  const drawer = document.getElementById('mobile-nav-drawer');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    drawer.classList.toggle('open');
+    document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      btn.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
 </body></html>

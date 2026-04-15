@@ -14,23 +14,23 @@
         theme: {
           extend: {
             "colors": {
-                    "surface-dim": "#001233",
+                    "surface-dim": "#000000",
                     "error": "#ffb4ab",
-                    "surface-variant": "#22345a",
+                    "surface-variant": "#1a1a1a",
                     "inverse-primary": "#5d5e5f",
                     "tertiary-fixed-dim": "#c8c6c3",
-                    "inverse-on-surface": "#1d2f55",
+                    "inverse-on-surface": "#1d1d1d",
                     "on-primary": "#2f3131",
                     "on-primary-fixed": "#1a1c1c",
                     "tertiary-container": "#20211f",
                     "on-primary-fixed-variant": "#454747",
                     "on-background": "#d9e2ff",
                     "on-error": "#690005",
-                    "surface-container-high": "#16294e",
+                    "surface-container-high": "#151515",
                     "secondary-fixed-dim": "#c6c6c6",
                     "on-surface": "#d9e2ff",
-                    "surface-container-low": "#041a3f",
-                    "surface": "#001233",
+                    "surface-container-low": "#0a0a0a",
+                    "surface": "#000000",
                     "on-tertiary-fixed": "#1b1c1a",
                     "on-error-container": "#ffdad6",
                     "secondary": "#c6c6c6",
@@ -40,17 +40,17 @@
                     "on-secondary-container": "#b8b8b8",
                     "on-tertiary-fixed-variant": "#474744",
                     "outline": "#8f9099",
-                    "surface-bright": "#26385e",
+                    "surface-bright": "#252525",
                     "on-secondary-fixed-variant": "#464747",
-                    "surface-container-highest": "#22345a",
+                    "surface-container-highest": "#1a1a1a",
                     "on-secondary-fixed": "#1a1c1c",
                     "on-primary-container": "#878888",
                     "primary-container": "#1f2121",
                     "primary-fixed": "#e2e2e2",
-                    "surface-container-lowest": "#000d29",
-                    "background": "#001233",
+                    "surface-container-lowest": "#000000",
+                    "background": "#000000",
                     "tertiary-fixed": "#e4e2de",
-                    "surface-container": "#091e43",
+                    "surface-container": "#111111",
                     "tertiary": "#c8c6c3",
                     "outline-variant": "#44464e",
                     "on-surface-variant": "#c5c6cf",
@@ -77,26 +77,11 @@
         }
       }
     </script>
-<style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-      }
-      .silver-text {
-        background: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .silver-border {
-        border-image: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%) 1;
-      }
-      ::-webkit-scrollbar { width: 6px; }
-      ::-webkit-scrollbar-track { background: #001233; }
-      ::-webkit-scrollbar-thumb { background: #22345a; }
-    </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-surface font-body text-on-surface">
 <!-- TopNavBar Shell -->
-<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-none bg-[#001233]/60 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-none">
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-none bg-[#010815]/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-none">
 <div class="flex items-center">
 <a href="index.html" class="text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0]">Achija Jewellers</a>
 </div>
@@ -127,7 +112,7 @@
 <p class="text-label uppercase tracking-[0.2em] text-on-surface-variant text-[0.75rem]">The Silver Heritage Standard of Trust</p>
 </header>
 <!-- Content Grid: Ivory Background Canvas -->
-<section class="mx-12 lg:mx-auto max-w-6xl bg-[#F5F3EF] text-[#0A1F44] shadow-2xl p-8 md:p-20 relative overflow-hidden">
+<section class="mx-12 lg:mx-auto max-w-6xl bg-[#111111] text-[#E5E5E5] shadow-2xl p-8 md:p-20 relative overflow-hidden">
 <!-- Decorative Silver Accent -->
 <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0] opacity-30"></div>
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -202,7 +187,7 @@
 </div>
 </article>
 <!-- Contact Inquiry Callout -->
-<div class="bg-[#0A1F44] p-12 text-white flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="bg-[#1c1c1c] p-12 text-white flex flex-col md:flex-row justify-between items-center gap-8">
 <div>
 <h3 class="font-headline text-2xl mb-2 italic">Seeking Clarification?</h3>
 <p class="text-on-surface-variant opacity-80 max-w-md">Our curators are available to discuss our legal framework and silver heritage standards.</p>
@@ -226,7 +211,7 @@
 </section>
 </main>
 <!-- Footer Shell -->
-<footer class="w-full bg-[#041A3F] flex flex-col items-center gap-12 py-20 px-12 border-none">
+<footer class="w-full bg-[#050505] flex flex-col items-center gap-12 py-20 px-12 border-none">
 <div class="flex flex-col items-center gap-6">
 <a href="index.html" class="text-xl font-['Noto_Serif'] text-[#C6C6C6]">Achija Jewellers</a>
 <div class="flex flex-wrap justify-center gap-8 md:gap-16">

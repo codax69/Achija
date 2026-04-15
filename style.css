@@ -1,0 +1,142 @@
+/* ═══════════════════════════════════════════════
+   Achija Jewellers — Shared Styles
+   Responsive layout is handled entirely via
+   Tailwind CSS responsive prefixes in HTML.
+   Only non-Tailwind utilities live here.
+═══════════════════════════════════════════════ */
+
+/* Material Icons weight */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Silver gradient text (requires clip — can't do in Tailwind) */
+.silver-gradient-text,
+.silver-text {
+    background: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Silver border via border-image (not supported in Tailwind) */
+.silver-border {
+    border: 1px solid transparent;
+    border-image: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%) 1;
+}
+
+.silver-border-solid {
+    border: 1px solid transparent;
+    background-image: linear-gradient(#010815, #010815),
+                      linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.silver-glow:hover {
+    box-shadow: 0 0 15px rgba(216, 216, 216, 0.3);
+}
+
+/* Velvet dark radial bg */
+.velvet-depth {
+    background: radial-gradient(circle at center, #0a1930 0%, #000000 100%);
+}
+
+/* Zoom on hover for product images */
+.zoom-container:hover img {
+    transform: scale(1.1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar          { height: 6px; width: 6px; }
+::-webkit-scrollbar-track    { background: #000; }
+::-webkit-scrollbar-thumb    { background: #0a1930; }
+
+/* Hide scrollbar utility */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─────────────────────────────────────────────
+   Hamburger Button
+   Visibility controlled via Tailwind: md:hidden
+───────────────────────────────────────────── */
+.hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: #C6C6C6;
+    transition: transform 0.35s ease, opacity 0.35s ease, width 0.35s ease;
+    transform-origin: center;
+}
+
+.hamburger-btn.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; width: 0; }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ─────────────────────────────────────────────
+   Mobile Nav Full-Screen Drawer
+   (needs JS-toggled .open class — can't be
+    done with Tailwind alone without @apply)
+───────────────────────────────────────────── */
+#mobile-nav-drawer {
+    position: fixed;
+    inset: 0;
+    background: rgba(1, 8, 21, 0.97);
+    backdrop-filter: blur(24px);
+    z-index: 55;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+#mobile-nav-drawer.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#mobile-nav-drawer a {
+    font-family: 'Noto Serif', serif;
+    font-size: 2rem;
+    color: #C6C6C6;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#mobile-nav-drawer a:hover,
+#mobile-nav-drawer a.active { color: #fff; }
+
+#mobile-nav-drawer .mobile-nav-footer {
+    position: absolute;
+    bottom: 3rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+#mobile-nav-drawer .mobile-nav-footer a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(198, 198, 198, 0.35);
+}

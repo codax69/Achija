@@ -14,23 +14,23 @@
           theme: {
             extend: {
               "colors": {
-                      "surface-dim": "#001233",
+                      "surface-dim": "#010815",
                       "error": "#ffb4ab",
-                      "surface-variant": "#22345a",
+                      "surface-variant": "#0d1b2e",
                       "inverse-primary": "#5d5e5f",
                       "tertiary-fixed-dim": "#c8c6c3",
-                      "inverse-on-surface": "#1d2f55",
+                      "inverse-on-surface": "#020c1b",
                       "on-primary": "#2f3131",
                       "on-primary-fixed": "#1a1c1c",
                       "tertiary-container": "#20211f",
                       "on-primary-fixed-variant": "#454747",
                       "on-background": "#d9e2ff",
                       "on-error": "#690005",
-                      "surface-container-high": "#16294e",
+                      "surface-container-high": "#0f203b",
                       "secondary-fixed-dim": "#c6c6c6",
                       "on-surface": "#d9e2ff",
-                      "surface-container-low": "#041a3f",
-                      "surface": "#001233",
+                      "surface-container-low": "#020c1b",
+                      "surface": "#010815",
                       "on-tertiary-fixed": "#1b1c1a",
                       "on-error-container": "#ffdad6",
                       "secondary": "#c6c6c6",
@@ -40,17 +40,17 @@
                       "on-secondary-container": "#b8b8b8",
                       "on-tertiary-fixed-variant": "#474744",
                       "outline": "#8f9099",
-                      "surface-bright": "#26385e",
+                      "surface-bright": "#1a365d",
                       "on-secondary-fixed-variant": "#464747",
-                      "surface-container-highest": "#22345a",
+                      "surface-container-highest": "#1c325c",
                       "on-secondary-fixed": "#1a1c1c",
                       "on-primary-container": "#878888",
                       "primary-container": "#1f2121",
                       "primary-fixed": "#e2e2e2",
-                      "surface-container-lowest": "#000d29",
-                      "background": "#001233",
+                      "surface-container-lowest": "#000000",
+                      "background": "#000000",
                       "tertiary-fixed": "#e4e2de",
-                      "surface-container": "#091e43",
+                      "surface-container": "#0a1930",
                       "tertiary": "#c8c6c3",
                       "outline-variant": "#44464e",
                       "on-surface-variant": "#c5c6cf",
@@ -77,26 +77,12 @@
           },
         }
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .silver-gradient-text {
-            background: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .silver-border {
-            border: 1px solid;
-            border-image-source: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
-            border-image-slice: 1;
-        }
-    </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary/30">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-none bg-[#001233]/60 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-<a href="index.html" class="text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0] font-medium cursor-pointer">
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 md:px-12 py-4 md:py-6 max-w-none bg-[#010815]/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+<a href="index.html" class="text-xl md:text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0] font-medium cursor-pointer">
             Achija Jewellers
         </a>
 <div class="hidden md:flex items-center gap-12 font-['Noto_Serif'] font-medium tracking-tight">
@@ -104,51 +90,64 @@
 <a class="text-white border-b border-[#D8D8D8] pb-1" href="legacy.html">About</a>
 <a class="text-[#C6C6C6]/70 hover:text-white transition-colors" href="inquiry.html">Inquiry</a>
 </div>
-<div class="flex items-center gap-8">
-<button class="text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
+<div class="flex items-center gap-4">
+<button class="hidden md:inline text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
 <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
 </button>
-<button class="text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
+<button class="hidden md:inline text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
 <span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="hamburger-btn md:hidden" id="hamburger-btn" aria-label="Open menu">
+<span></span><span></span><span></span>
 </button>
 </div>
 </nav>
+<!-- Mobile Nav Drawer -->
+<div id="mobile-nav-drawer">
+<a href="collections.html">Collections</a>
+<a href="legacy.html" class="active">About</a>
+<a href="inquiry.html">Inquiry</a>
+<div class="mobile-nav-footer">
+<a href="privacy_terms.html">Privacy</a>
+<a href="privacy_terms.html">Terms</a>
+</div>
+</div>
 <main>
 <!-- Hero Section: The Heritage Anchor -->
-<section class="relative min-h-screen flex items-center px-12 pt-20">
+<section class="relative min-h-screen flex items-center px-4 sm:px-8 md:px-12 pt-20">
 <div class="absolute inset-0 z-0 overflow-hidden">
 <img alt="Heritage Sterling Silver Jewelry" class="w-full h-full object-cover opacity-40 grayscale" data-alt="Close-up of intricate handcrafted sterling silver necklace resting on deep blue velvet with dramatic cinematic lighting highlighting metallic textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPJ9o-_f4IgboHngeZ7VYstAa8gfKwTI1goMUtxi-O1M26I05TYMZqJZAXasnxkUEZLUm-xtCx7Js0QNy0XnWse0FgMEo7r6yC6b3_1fbynek_XU1XCZwlCVvMQjm6ZRb15_TpdYZ7t01cF-_txR0dQYzFZVT3ItM0lRNuBXUea8y1zh1k0Td2ay-nLAknx1X6O9PND2IptV9D6-8YOCHPRpqPEzetaEfTlD6_soQ_hXZ99rzQdNA1jKg6mQ2ZeULKw1UCxq-ufYB5"/>
 <div class="absolute inset-0 bg-gradient-to-b from-surface/20 via-surface/60 to-surface"></div>
 </div>
 <div class="relative z-10 max-w-4xl">
-<span class="label-md uppercase tracking-[0.2em] text-primary/60 block mb-6 font-medium">Est. 1924</span>
-<h1 class="text-6xl md:text-8xl font-headline italic leading-tight mb-8 silver-gradient-text -tracking-[0.02em]">
+<span class="label-md uppercase tracking-[0.2em] text-primary/60 block mb-4 md:mb-6 font-medium">Est. 1924</span>
+<h1 class="text-4xl sm:text-6xl md:text-8xl font-headline italic leading-tight mb-6 md:mb-8 silver-gradient-text -tracking-[0.02em]">
                     The Silver Heritage <br/>Standard.
                 </h1>
-<p class="text-xl md:text-2xl text-on-surface-variant font-light max-w-2xl leading-relaxed tracking-wide">
+<p class="text-lg md:text-2xl text-on-surface-variant font-light max-w-2xl leading-relaxed tracking-wide">
                     For a century, we have curated the soul of silver, transforming raw metal into silent expressions of royalty and precision.
                 </p>
 </div>
 </section>
 <!-- Asymmetric Storytelling Grid -->
-<section class="py-32 px-12 bg-surface-container-low">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+<section class="py-20 md:py-32 px-4 sm:px-8 md:px-12 bg-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
 <div class="md:col-span-5 order-2 md:order-1">
 <img alt="Silver Crafting" class="w-full aspect-[4/5] object-cover shadow-[0_40px_100px_rgba(0,0,0,0.4)]" data-alt="Side profile of an artisan master silversmith working on a delicate piece of jewelry with focused soft lighting in a dark atelier" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPuKHeTeYGm1jSqEghj0VlsW1BA2MbES2p1Q8o9jg47Al_on-QM_Cj8PfJG4r4BBAhzU7V_vMX8SjMbcN7YTEdY8DQBr-lk21yNl5kwa0G7MaS-JNf5HJdkK6Tt5dv0P_-l354Wm15r7kI225PxpbciUo6VW_erN8k-rOFb9JetwFLpKL4azKLUGT70FUHDlkzunuHDtKHXcwhpMhdWy6ByOCLW1CevjnY2yyuPw99grBjdoy7GpcACd0Q6Ro0gMQhu5lxX3K9GvNV"/>
 </div>
 <div class="md:col-span-6 md:col-start-7 order-1 md:order-2">
-<h2 class="text-4xl md:text-5xl font-headline mb-12 text-white leading-tight -tracking-[0.02em]">
+<h2 class="text-3xl md:text-5xl font-headline mb-8 md:mb-12 text-white leading-tight -tracking-[0.02em]">
                         The Purity <br/>of Purpose
                     </h2>
 <div class="space-y-8">
-<p class="text-lg text-on-surface-variant leading-relaxed tracking-[0.05em]">
+<p class="text-base md:text-lg text-on-surface-variant leading-relaxed tracking-[0.05em]">
                             We believe luxury is found in visual silence. Every collection is an exercise in restraint, ensuring that the luster of high-grade sterling silver remains the protagonist.
                         </p>
-<p class="text-lg text-on-surface-variant leading-relaxed tracking-[0.05em]">
+<p class="text-base md:text-lg text-on-surface-variant leading-relaxed tracking-[0.05em]">
                             Our artisans reject the mass-produced, choosing instead the slow, rhythmic cadence of traditional hand-casting and polishing.
                         </p>
 <div class="pt-8">
-<button class="silver-border px-10 py-4 text-primary uppercase tracking-[0.2em] text-xs font-semibold hover:bg-white/5 transition-all duration-500">
+<button class="silver-border px-8 sm:px-10 py-4 text-primary uppercase tracking-[0.2em] text-xs font-semibold hover:bg-white/5 transition-all duration-500">
                                 Explore Our Craft
                             </button>
 </div>
@@ -157,43 +156,43 @@
 </div>
 </section>
 <!-- Bento Heritage Gallery -->
-<section class="py-32 px-12 bg-surface">
-<div class="text-center mb-24">
+<section class="py-20 md:py-32 px-4 sm:px-8 md:px-12 bg-surface">
+<div class="text-center mb-12 md:mb-24">
 <h3 class="label-md uppercase tracking-[0.3em] text-primary/40 mb-4">Curated Details</h3>
-<h2 class="text-5xl font-headline text-white">The Curator's Eye</h2>
+<h2 class="text-3xl md:text-5xl font-headline text-white">The Curator's Eye</h2>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-8 h-[800px]">
-<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden bg-surface-container-highest">
-<img alt="Silver Detail" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Ultra-macro shot of a silver ring showing the intricate engraved patterns and the cool metallic sheen under soft blue light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz9wXsuCxY0XSOYjigKd8DpPcnilYeOoGChLTAmmShq53bD-r7zgbuqzKo8OO3jf2wN8qFhwVQrPdFoT31kaPARWQvRaRbywMm0jJYh0Jlz5qhLNOGot-PygLx_2L9dS7iG3d4DFvcFmZ2SbReklrUX3sp4uKb_fLT__1hWhu73kPuFkRzTmUCAZa1e2nnGsexyEVMWRIm_5fZNSJpKz99Wfpv9ZolhnuwavfYkgUCUjLbl2vGTm7srFGEGFGBb9Ujru3r7cxSQMbM"/>
-<div class="absolute bottom-10 left-10">
-<p class="font-headline text-2xl text-white italic">Intricate Precision</p>
-</div>
-</div>
-<div class="md:col-span-2 relative group overflow-hidden bg-surface-container-highest">
-<img alt="Silver Earring" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Sleek minimalist silver earrings displayed on a dark velvet stand with sharp directional light creating long shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8YqFfhoTMxt-IXpG8CJegAzK-_8GNP9kWF0pc2kZOaCNM8Lm7Kb-ZJqq8jXM3KyXjCJS235KH8rhPWYtYJdLu9BrKzgLay0o91qbha9OD4sS9PI_VUJID3IOLLm-5Xko0nKFT4HSDeiLU26c6FpFnsgEU_zmF23b_mtJGnokZr2butCj15D6XIXSRpucRXbu9f-Td_BkynK4IwnfnS68_3iUgJevFkQD61m0D26DedjtTOeTqudNdrlCcs_CsZqmLoB6OtR8KcrTs"/>
-<div class="absolute bottom-10 left-10">
-<p class="font-headline text-2xl text-white italic">Modern Heritage</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8" style="min-height: 500px;">
+<div class="sm:col-span-2 md:col-span-2 md:row-span-2 relative group overflow-hidden bg-surface-container-highest" style="min-height:320px;">
+<img alt="Silver Detail" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Ultra-macro shot of a silver ring showing the intricate engraved patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz9wXsuCxY0XSOYjigKd8DpPcnilYeOoGChLTAmmShq53bD-r7zgbuqzKo8OO3jf2wN8qFhwVQrPdFoT31kaPARWQvRaRbywMm0jJYh0Jlz5qhLNOGot-PygLx_2L9dS7iG3d4DFvcFmZ2SbReklrUX3sp4uKb_fLT__1hWhu73kPuFkRzTmUCAZa1e2nnGsexyEVMWRIm_5fZNSJpKz99Wfpv9ZolhnuwavfYkgUCUjLbl2vGTm7srFGEGFGBb9Ujru3r7cxSQMbM"/>
+<div class="absolute bottom-6 md:bottom-10 left-6 md:left-10">
+<p class="font-headline text-xl md:text-2xl text-white italic">Intricate Precision</p>
 </div>
 </div>
-<div class="relative group overflow-hidden bg-surface-container-highest">
-<img alt="Silver Texture" class="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract view of liquid molten silver being poured into a mold, glowing with heat but maintaining its metallic identity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJyK7CKKFV2YRynkIjBeMXw3-Udan_t56TJIAyb4yCsJORSBzCnFKg6QNPNqqWNRPW4seHHXNwM0EgvRjU05Gt7j50nkzCuYl2sT2aB74u3HqVRqZevJ3XV1YS2LtbF3SIbFYw7wdtzom4e3OeriAkSigSY-2ouqiMFbt1XNtesIiGcLEVEnOkLbN7xnXOXHJMThM6Of24LmhO92Y12ei-748QmcA7ozEgOiIVVCUQ8Rzxh_ax03FA6DnMXT_3MOC3mrbEHmgCEbDn"/>
+<div class="sm:col-span-2 md:col-span-2 relative group overflow-hidden bg-surface-container-highest" style="min-height:240px;">
+<img alt="Silver Earring" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Sleek minimalist silver earrings on dark velvet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8YqFfhoTMxt-IXpG8CJegAzK-_8GNP9kWF0pc2kZOaCNM8Lm7Kb-ZJqq8jXM3KyXjCJS235KH8rhPWYtYJdLu9BrKzgLay0o91qbha9OD4sS9PI_VUJID3IOLLm-5Xko0nKFT4HSDeiLU26c6FpFnsgEU_zmF23b_mtJGnokZr2butCj15D6XIXSRpucRXbu9f-Td_BkynK4IwnfnS68_3iUgJevFkQD61m0D26DedjtTOeTqudNdrlCcs_CsZqmLoB6OtR8KcrTs"/>
+<div class="absolute bottom-6 md:bottom-10 left-6 md:left-10">
+<p class="font-headline text-xl md:text-2xl text-white italic">Modern Heritage</p>
 </div>
-<div class="relative group overflow-hidden bg-surface-container-highest">
-<img alt="Silver Cuff" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Handcrafted silver cuff bracelet on a dark background with a single beam of light reflecting off the polished surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRsiwY6Kb3VgPtlGAOUNBFreMqOZZyAGL9SpR8pBeFIivOUQhPA00ZoMA5I34R_D5CjZEQbOLX0PRMJo3AlEbVi92KrUlxF0e5wmOh2KpK8XkZM1hPTYTea6BoMyFkn1Ru4XdZU7RTQhSyPfFN6YS4MRSki8cklkPdvoChVLeDf9Rma-SwXJsxXG5ZtKkdcFV8IFeJ4ZWu46isSGUgLRquxWhOCaYy9LU2ds7AYnch3vXrZhrRjsyPsbsmbY5rdoybzsXo2kle0m_b"/>
+</div>
+<div class="relative group overflow-hidden bg-surface-container-highest" style="min-height:200px;">
+<img alt="Silver Texture" class="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Molten silver being poured" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJyK7CKKFV2YRynkIjBeMXw3-Udan_t56TJIAyb4yCsJORSBzCnFKg6QNPNqqWNRPW4seHHXNwM0EgvRjU05Gt7j50nkzCuYl2sT2aB74u3HqVRqZevJ3XV1YS2LtbF3SIbFYw7wdtzom4e3OeriAkSigSY-2ouqiMFbt1XNtesIiGcLEVEnOkLbN7xnXOXHJMThM6Of24LmhO92Y12ei-748QmcA7ozEgOiIVVCUQ8Rzxh_ax03FA6DnMXT_3MOC3mrbEHmgCEbDn"/>
+</div>
+<div class="relative group overflow-hidden bg-surface-container-highest" style="min-height:200px;">
+<img alt="Silver Cuff" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Handcrafted silver cuff bracelet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRsiwY6Kb3VgPtlGOUNBFreMqOZZyAGL9SpR8pBeFIivOUQhPA00ZoMA5I34R_D5CjZEQbOLX0PRMJo3AlEbVi92KrUlxF0e5wmOh2KpK8XkZM1hPTYTea6BoMyFkn1Ru4XdZU7RTQhSyPfFN6YS4MRSki8cklkPdvoChVLeDf9Rma-SwXJsxXG5ZtKkdcFV8IFeJ4ZWu46isSGUgLRquxWhOCaYy9LU2ds7AYnch3vXrZhrRjsyPsbsmbY5rdoybzsXo2kle0m_b"/>
 </div>
 </div>
 </section>
 <!-- Trust & Philosophy Section -->
-<section class="py-32 px-12 bg-surface-container-high relative overflow-hidden">
+<section class="py-20 md:py-32 px-4 sm:px-8 md:px-12 bg-surface-container-high relative overflow-hidden">
 <div class="max-w-4xl mx-auto text-center">
-<div class="mb-12">
+<div class="mb-8 md:mb-12">
 <span class="material-symbols-outlined text-5xl silver-gradient-text" data-icon="verified">verified</span>
 </div>
-<h2 class="text-4xl md:text-5xl font-headline mb-8 text-white italic">The Vow of Purity</h2>
-<p class="text-xl text-on-surface-variant font-light leading-relaxed tracking-wider mb-16">
+<h2 class="text-3xl md:text-5xl font-headline mb-6 md:mb-8 text-white italic">The Vow of Purity</h2>
+<p class="text-lg md:text-xl text-on-surface-variant font-light leading-relaxed tracking-wider mb-10 md:mb-16">
                     Every piece of Achija silver is certified for its 92.5 hallmark purity. Beyond the metal, we offer the trust of three generations. We do not just sell jewelry; we transfer a legacy of trust that rests against your skin.
                 </p>
-<div class="flex flex-col md:flex-row justify-center gap-16 md:gap-32">
+<div class="flex flex-col sm:flex-row justify-center gap-10 sm:gap-16 md:gap-32">
 <div>
 <h4 class="text-3xl font-headline text-white mb-2 italic">100%</h4>
 <p class="label-md uppercase tracking-widest text-primary/50">Silver Purity</p>
@@ -211,7 +210,7 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-[#041A3F] flex flex-col items-center gap-12 w-full py-20 px-12">
+<footer class="bg-[#020c1b] flex flex-col items-center gap-8 md:gap-12 w-full py-16 md:py-20 px-6 md:px-12">
 <a href="index.html" class="text-xl font-['Noto_Serif'] text-[#C6C6C6]">Achija Jewellers</a>
 <div class="flex flex-wrap justify-center gap-12 font-['Inter'] tracking-[0.1em] uppercase text-[0.75rem]">
 <a class="text-[#C6C6C6]/50 hover:text-white transition-colors" href="collections.html">Collections</a>
@@ -228,5 +227,25 @@
             © 2024 Achija Jewellers. The Silver Heritage Standard.
         </div>
 </footer>
+<script src="cart.js"></script>
 <script src="features.js"></script>
+<script>
+(function(){
+  const btn = document.getElementById('hamburger-btn');
+  const drawer = document.getElementById('mobile-nav-drawer');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    drawer.classList.toggle('open');
+    document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      btn.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
 </body></html>

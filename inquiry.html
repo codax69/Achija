@@ -13,20 +13,20 @@
         theme: {
           extend: {
             "colors": {
-                    "surface-dim": "#001233",
-                    "surface-variant": "#22345a",
+                    "surface-dim": "#010815",
+                    "surface-variant": "#0d1b2e",
                     "on-background": "#d9e2ff",
-                    "surface-container-high": "#16294e",
+                    "surface-container-high": "#0f203b",
                     "secondary-fixed-dim": "#c6c6c6",
                     "on-surface": "#d9e2ff",
-                    "surface-container-low": "#041a3f",
-                    "surface": "#001233",
+                    "surface-container-low": "#020c1b",
+                    "surface": "#010815",
                     "primary": "#c6c6c6",
                     "outline": "#8f9099",
-                    "surface-bright": "#26385e",
-                    "surface-container-highest": "#22345a",
-                    "background": "#001233",
-                    "surface-container": "#091e43",
+                    "surface-bright": "#1a365d",
+                    "surface-container-highest": "#1c325c",
+                    "background": "#000000",
+                    "surface-container": "#0a1930",
                     "outline-variant": "#44464e",
                     "on-surface-variant": "#c5c6cf",
                     "primary-fixed-dim": "#c6c6c6",
@@ -41,52 +41,54 @@
         }
       }
     </script>
-<style>
-      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-      .silver-text {
-        background: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .silver-border { border-image: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%) 1; }
-      ::-webkit-scrollbar { width: 6px; }
-      ::-webkit-scrollbar-track { background: #001233; }
-      ::-webkit-scrollbar-thumb { background: #22345a; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-surface font-body text-on-surface">
 <!-- TopNavBar Shell -->
-<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-none bg-[#001233]/60 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-none">
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 md:px-12 py-4 md:py-6 max-w-none bg-[#010815]/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-none">
     <div class="flex items-center">
-        <a href="index.html" class="text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0]">Achija Jewellers</a>
+        <a href="index.html" class="text-xl md:text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0]">Achija Jewellers</a>
     </div>
     <div class="hidden md:flex items-center gap-12 font-['Noto_Serif'] font-medium tracking-tight">
         <a class="text-[#C6C6C6]/70 hover:text-white transition-colors" href="collections.html">Collections</a>
         <a class="text-[#C6C6C6]/70 hover:text-white transition-colors" href="legacy.html">About</a>
         <a class="text-white border-b border-[#D8D8D8] pb-1" href="inquiry.html">Inquiry</a>
     </div>
-    <div class="flex items-center gap-6">
+    <div class="flex items-center gap-4">
         <div class="hidden md:flex items-center text-[#C6C6C6] transition-transform duration-300 hover:scale-[1.02]">
             <span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
         </div>
-        <button class="text-[#C6C6C6] transition-transform duration-300 hover:scale-[1.02]">
+        <button class="hidden md:inline text-[#C6C6C6] transition-transform duration-300 hover:scale-[1.02]">
             <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
         </button>
-        <button class="text-[#C6C6C6] transition-transform duration-300 hover:scale-[1.02]">
+        <button class="hidden md:inline text-[#C6C6C6] transition-transform duration-300 hover:scale-[1.02]">
             <span class="material-symbols-outlined" data-icon="person">person</span>
+        </button>
+        <button class="hamburger-btn md:hidden" id="hamburger-btn" aria-label="Open menu">
+            <span></span><span></span><span></span>
         </button>
     </div>
 </nav>
+<!-- Mobile Nav Drawer -->
+<div id="mobile-nav-drawer">
+<a href="collections.html">Collections</a>
+<a href="legacy.html">About</a>
+<a href="inquiry.html" class="active">Inquiry</a>
+<div class="mobile-nav-footer">
+<a href="privacy_terms.html">Privacy</a>
+<a href="privacy_terms.html">Terms</a>
+</div>
+</div>
 
 <!-- Main Content Canvas -->
-<main class="pt-40 pb-32">
-    <header class="px-12 mb-24 max-w-2xl mx-auto text-center">
+<main class="pt-28 md:pt-40 pb-24 md:pb-32">
+    <header class="px-4 sm:px-8 md:px-12 mb-12 md:mb-24 max-w-2xl mx-auto text-center">
         <div class="inline-block mb-6 h-px w-24 bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-        <h1 class="text-5xl md:text-7xl font-headline italic tracking-tighter text-on-surface mb-8">Bespoke <span class="silver-text">Inquiries</span></h1>
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-headline italic tracking-tighter text-on-surface mb-6 md:mb-8">Bespoke <span class="silver-text">Inquiries</span></h1>
         <p class="text-label uppercase tracking-[0.2em] text-on-surface-variant text-[0.75rem]">Connect with our Master Curators</p>
     </header>
 
-    <section class="mx-12 lg:mx-auto max-w-3xl bg-surface-container-low text-on-surface shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-8 md:p-16 relative overflow-hidden">
+    <section class="mx-4 sm:mx-8 md:mx-12 lg:mx-auto max-w-3xl bg-surface-container-low text-on-surface shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-6 sm:p-10 md:p-16 relative overflow-hidden">
         <!-- Form via WhatsApp -->
         <form id="inquiryForm" class="space-y-12 relative z-10 w-full relative">
             <div>
@@ -113,7 +115,7 @@
 </main>
 
 <!-- Footer Shell -->
-<footer class="w-full bg-[#041A3F] flex flex-col items-center gap-12 py-20 px-12 border-none mt-20">
+<footer class="w-full bg-[#020c1b] flex flex-col items-center gap-12 py-20 px-12 border-none mt-20">
     <div class="flex flex-col items-center gap-6">
         <a href="index.html" class="text-xl font-['Noto_Serif'] text-[#C6C6C6]">Achija Jewellers</a>
         <div class="flex flex-wrap justify-center gap-8 md:gap-16">
@@ -132,6 +134,7 @@
     </div>
 </footer>
 
+<script src="cart.js"></script>
 <script src="features.js"></script>
 
 <!-- WhatsApp Logic -->
@@ -143,13 +146,27 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
     const message = document.getElementById('wa_message').value;
     
     const text = `*New Inquiry | Achija Jewellers*%0A%0A*Name:* ${name}%0A*Contact:* ${contact}%0A*Message:* ${message}`;
-    
-    // NOTE TO USER: Replace this placeholder number with the actual WhatsApp number
-    // Format: Include country code without any + or 00. Example: 919876543210
     const whatsappNumber = "919265318453"; 
-    
     window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
 });
+
+(function(){
+  const btn = document.getElementById('hamburger-btn');
+  const drawer = document.getElementById('mobile-nav-drawer');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    drawer.classList.toggle('open');
+    document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      btn.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
 </script>
 </body>
 </html>

@@ -13,23 +13,23 @@
         theme: {
           extend: {
             "colors": {
-                    "surface-dim": "#001233",
+                    "surface-dim": "#000000",
                     "error": "#ffb4ab",
-                    "surface-variant": "#22345a",
+                    "surface-variant": "#1a1a1a",
                     "inverse-primary": "#5d5e5f",
                     "tertiary-fixed-dim": "#c8c6c3",
-                    "inverse-on-surface": "#1d2f55",
+                    "inverse-on-surface": "#1d1d1d",
                     "on-primary": "#2f3131",
                     "on-primary-fixed": "#1a1c1c",
                     "tertiary-container": "#20211f",
                     "on-primary-fixed-variant": "#454747",
                     "on-background": "#d9e2ff",
                     "on-error": "#690005",
-                    "surface-container-high": "#16294e",
+                    "surface-container-high": "#151515",
                     "secondary-fixed-dim": "#c6c6c6",
                     "on-surface": "#d9e2ff",
-                    "surface-container-low": "#041a3f",
-                    "surface": "#001233",
+                    "surface-container-low": "#0a0a0a",
+                    "surface": "#000000",
                     "on-tertiary-fixed": "#1b1c1a",
                     "on-error-container": "#ffdad6",
                     "secondary": "#c6c6c6",
@@ -39,17 +39,17 @@
                     "on-secondary-container": "#b8b8b8",
                     "on-tertiary-fixed-variant": "#474744",
                     "outline": "#8f9099",
-                    "surface-bright": "#26385e",
+                    "surface-bright": "#252525",
                     "on-secondary-fixed-variant": "#464747",
-                    "surface-container-highest": "#22345a",
+                    "surface-container-highest": "#1a1a1a",
                     "on-secondary-fixed": "#1a1c1c",
                     "on-primary-container": "#878888",
                     "primary-container": "#1f2121",
                     "primary-fixed": "#e2e2e2",
-                    "surface-container-lowest": "#000d29",
-                    "background": "#001233",
+                    "surface-container-lowest": "#000000",
+                    "background": "#000000",
                     "tertiary-fixed": "#e4e2de",
-                    "surface-container": "#091e43",
+                    "surface-container": "#111111",
                     "tertiary": "#c8c6c3",
                     "outline-variant": "#44464e",
                     "on-surface-variant": "#c5c6cf",
@@ -76,29 +76,12 @@
         },
       }
     </script>
-<style>
-        .silver-gradient-text {
-            background: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .silver-border {
-            border: 1px solid;
-            border-image: linear-gradient(135deg, #C0C0C0, #D8D8D8, #C0C0C0) 1;
-        }
-        .glass-nav {
-            background: rgba(0, 18, 51, 0.6);
-            backdrop-filter: blur(20px);
-        }
-        .zoom-container:hover img {
-            transform: scale(1.1);
-        }
-    </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-secondary/30">
 <!-- TopNavBar from Shared Components -->
-<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-none bg-[#001233]/60 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-<a href="index.html" class="text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0]">
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 md:px-12 py-4 md:py-6 max-w-none bg-[#010815]/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+<a href="index.html" class="text-xl md:text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0]">
             Achija Jewellers
         </a>
 <div class="hidden md:flex gap-12 font-['Noto_Serif'] font-medium tracking-tight">
@@ -106,36 +89,49 @@
 <a class="text-[#C6C6C6]/70 hover:text-white transition-colors" href="legacy.html">About</a>
 <a class="text-[#C6C6C6]/70 hover:text-white transition-colors" href="inquiry.html">Inquiry</a>
 </div>
-<div class="flex items-center gap-8 text-[#C6C6C6]">
-<span class="material-symbols-outlined hover:scale-[1.02] transition-transform duration-300 cursor-pointer">shopping_bag</span>
-<span class="material-symbols-outlined hover:scale-[1.02] transition-transform duration-300 cursor-pointer">person</span>
+<div class="flex items-center gap-4 text-[#C6C6C6]">
+<span class="hidden md:inline material-symbols-outlined hover:scale-[1.02] transition-transform duration-300 cursor-pointer">shopping_bag</span>
+<span class="hidden md:inline material-symbols-outlined hover:scale-[1.02] transition-transform duration-300 cursor-pointer">person</span>
+<button class="hamburger-btn md:hidden" id="hamburger-btn" aria-label="Open menu">
+<span></span><span></span><span></span>
+</button>
 </div>
 </nav>
-<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-<!-- Product Gallery (Asymmetric Layout) -->
-<div class="lg:col-span-7 space-y-8">
+<!-- Mobile Nav Drawer -->
+<div id="mobile-nav-drawer">
+<a href="collections.html" class="active">Collections</a>
+<a href="legacy.html">About</a>
+<a href="inquiry.html">Inquiry</a>
+<div class="mobile-nav-footer">
+<a href="privacy_terms.html">Privacy</a>
+<a href="privacy_terms.html">Terms</a>
+</div>
+</div>
+<main class="pt-24 md:pt-32 pb-16 md:pb-24 px-4 sm:px-8 md:px-12 lg:px-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24">
+<!-- Product Gallery -->
+<div class="lg:col-span-7 space-y-4 md:space-y-8">
 <div class="zoom-container overflow-hidden bg-surface-container-low aspect-[4/5] relative">
-<img id="detail-main-img" class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-zoom-in" data-alt="Close-up of a high-end sterling silver intricately carved cuff bracelet resting on deep blue velvet with soft dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzGkoakCqCewAMrHf9j3hSue49ZTA9tkR-3soHnWII2yQ2Kl8n4CUxVn3zOKkm0wbKs0DFUU_RUIx_g5HavhdeO8rEGn0_4n480RmCsqLfTwvUW2WdofY_Q1JAddyo1UiL4Re8sDmDHcCsjduMjCfnLPfW0_eqPAI5jVO8G_Yo6_ljKjKl47dUJ9otswRXkYRkM9gJxQAFAK3VkHiKSt5ULJqboemjZ0zB2fDC3xV6fdeocsf_pgzMilY6ecIy1VN_g3slVZnw1_Fg"/>
+<img id="detail-main-img" class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-zoom-in" data-alt="Close-up of a high-end sterling silver cuff bracelet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzGkoakCqCewAMrHf9j3hSue49ZTA9tkR-3soHnWII2yQ2Kl8n4CUxVn3zOKkm0wbKs0DFUU_RUIx_g5HavhdeO8rEGn0_4n480RmCsqLfTwvUW2WdofY_Q1JAddyo1UiL4Re8sDmDHcCsjduMjCfnLPfW0_eqPAI5jVO8G_Yo6_ljKjKl47dUJ9otswRXkYRkM9gJxQAFAK3VkHiKSt5ULJqboemjZ0zB2fDC3xV6fdeocsf_pgzMilY6ecIy1VN_g3slVZnw1_Fg"/>
 <div class="absolute bottom-6 left-6 flex gap-4">
 <span class="bg-surface/40 backdrop-blur-md px-4 py-1 text-[0.65rem] tracking-[0.2em] uppercase border border-white/10">Masterpiece</span>
 </div>
 </div>
-<div class="grid grid-cols-2 gap-8">
+<div class="grid grid-cols-2 gap-4 md:gap-8">
 <div class="zoom-container overflow-hidden bg-surface-container-low aspect-square">
-<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]" data-alt="Macro shot of hallmark 925 stamp and fine engraving details on a silver jewelry piece against dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaE2FX1GgzJP9A0VIyhTI3KMIoPo-IElCHLqRP4jMb3kIfQU_4f_6jAUg-Jp3F5ukiDhAQA14PU8HXTyW1RoNJl9ROPmT3hsNSFmq2fcSeqpQtLk77MtN8sTOyeV31qIfactkZHpRdduUUYRMGiPpI3nnNtpULuABKRcwf0V6g6BhnG5jYoxs8cYq0g-WqQLgMMNXYiO329HRDIrfNMCMHJ7pclmY5lC_ArsBX8n2yJeIafDj-n2gUIpcb6yOfeqjxDq817YdWTC-q"/>
+<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]" data-alt="Macro shot of hallmark 925 stamp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaE2FX1GgzJP9A0VIyhTI3KMIoPo-IElCHLqRP4jMb3kIfQU_4f_6jAUg-Jp3F5ukiDhAQA14PU8HXTyW1RoNJl9ROPmT3hsNSFmq2fcSeqpQtLk77MtN8sTOyeV31qIfactkZHpRdduUUYRMGiPpI3nnNtpULuABKRcwf0V6g6BhnG5jYoxs8cYq0g-WqQLgMMNXYiO329HRDIrfNMCMHJ7pclmY5lC_ArsBX8n2yJeIafDj-n2gUIpcb6yOfeqjxDq817YdWTC-q"/>
 </div>
-<div class="zoom-container overflow-hidden bg-surface-container-low aspect-square mt-12">
-<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]" data-alt="Elegant silver chain links reflecting soft cool light on a dark silk surface highlighting metallic luster" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgXdc2FBbKwiW8br4xC4--eXV1KizidFLOmcXRCwUxHAcd2vA2z6oHODxqFwz6Btd4AYWn93WcH9mw49l6-RiGFq7AYsiUa9r8ZQ3rwE9vVv49MDVUHe6lam-0PYmC8BcuDKRGPSGCg0z8QOOQeAX06ZlgfsztYgDcrn9Y7BoJkFHfUPZ-JkdpQBSQLbwHxmc5PK62tz0_0QmZ6QLwlhb90vwk5MTWVR8Slx56TzGpCH7b5nd7KxFb89tpsiSTL7mpIVLdCdJoIDeZ"/>
+<div class="zoom-container overflow-hidden bg-surface-container-low aspect-square mt-6 md:mt-12">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]" data-alt="Silver chain links" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgXdc2FBbKwiW8br4xC4--eXV1KizidFLOmcXRCwUxHAcd2vA2z6oHODxqFwz6Btd4AYWn93WcH9mw49l6-RiGFq7AYsiUa9r8ZQ3rwE9vVv49MDVUHe6lam-0PYmC8BcuDKRGPSGCg0z8QOOQeAX06ZlgfsztYgDcrn9Y7BoJkFHfUPZ-JkdpQBSQLbwHxmc5PK62tz0_0QmZ6QLwlhb90vwk5MTWVR8Slx56TzGpCH7b5nd7KxFb89tpsiSTL7mpIVLdCdJoIDeZ"/>
 </div>
 </div>
 </div>
 <!-- Product Details -->
-<div class="lg:col-span-5 sticky top-40 h-fit">
+<div class="lg:col-span-5 lg:sticky lg:top-40 h-fit">
 <div class="space-y-12">
 <div>
 <span class="label-md text-secondary/60 tracking-[0.2em] uppercase block mb-4">Artisan Collection</span>
-<h1 id="detail-title" class="text-4xl md:text-5xl font-headline font-bold tracking-tight text-white mb-6 leading-tight">The Lunar Crest Cuff</h1>
+<h1 id="detail-title" class="text-3xl md:text-5xl font-headline font-bold tracking-tight text-white mb-4 md:mb-6 leading-tight">The Lunar Crest Cuff</h1>
 <p id="detail-price" class="text-2xl silver-gradient-text font-headline font-medium tracking-tight">₹48,500</p>
 </div>
 <div class="space-y-6">
@@ -163,16 +159,20 @@
 </div>
 </div>
 <!-- Actions -->
-<div class="space-y-4 pt-4">
-<button class="w-full py-5 silver-border bg-transparent text-secondary uppercase tracking-[0.2em] font-label text-sm hover:bg-secondary/5 transition-all duration-300">
-                            Inquire for Purchase
-                        </button>
-<button class="w-full py-5 text-secondary/60 uppercase tracking-[0.2em] font-label text-[0.7rem] hover:text-white transition-colors">
-                            Request Custom Sizing
-                        </button>
+<div class="space-y-3 pt-4">
+<button id="detail-add-cart" class="w-full py-4 silver-border bg-transparent text-secondary uppercase tracking-[0.2em] font-label text-sm hover:bg-secondary/5 transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base">shopping_bag</span>
+Add to Collection
+</button>
+<button id="detail-buy-now" class="w-full py-4 bg-blue-700/80 border border-blue-500/40 text-white uppercase tracking-[0.2em] font-label text-sm hover:bg-blue-600 transition-all duration-300">
+Buy Now
+</button>
+<button class="w-full py-3 text-secondary/60 uppercase tracking-[0.2em] font-label text-[0.7rem] hover:text-white transition-colors">
+Request Custom Sizing
+</button>
 </div>
 <!-- Trust Indicators -->
-<div class="flex items-center gap-12 pt-8">
+<div class="flex flex-wrap items-center gap-6 md:gap-12 pt-8">
 <div class="flex flex-col gap-2">
 <span class="material-symbols-outlined text-secondary/40 text-3xl">verified</span>
 <span class="label-md text-[0.6rem] text-secondary/60">925 Certified Silver</span>
@@ -190,21 +190,21 @@
 </div>
 </div>
 <!-- Related Products Section -->
-<section class="mt-48">
-<div class="flex justify-between items-end mb-16">
+<section class="mt-24 md:mt-48">
+<div class="flex flex-wrap justify-between items-end gap-4 mb-10 md:mb-16">
 <div>
-<h2 class="text-3xl font-headline text-white mb-2">Complete the Ensemble</h2>
+<h2 class="text-2xl md:text-3xl font-headline text-white mb-2">Complete the Ensemble</h2>
 <p class="label-md text-secondary/50">Curated selections to match your collection</p>
 </div>
 <a class="text-secondary/80 hover:text-white border-b border-secondary/20 pb-1 text-sm tracking-widest transition-colors uppercase" href="collections.html">View All Collections</a>
 </div>
-<div id="related-products-grid" class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div id="related-products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
     <!-- Dynamic related products -->
 </div>
 </section>
 </main>
 <!-- Footer from Shared Components -->
-<footer class="bg-[#041A3F] flex flex-col items-center gap-12 w-full py-20 px-12">
+<footer class="bg-[#020c1b] flex flex-col items-center gap-12 w-full py-20 px-12">
 <a href="index.html" class="text-xl font-['Noto_Serif'] text-[#C6C6C6]">Achija Jewellers</a>
 <div class="flex flex-wrap justify-center gap-x-12 gap-y-4">
 <a class="font-['Inter'] tracking-[0.1em] uppercase text-[0.75rem] text-[#C6C6C6]/50 hover:text-white transition-colors" href="collections.html">Collections</a>
@@ -218,5 +218,25 @@
         </div>
 </footer>
 <script src="products.js"></script>
+<script src="cart.js"></script>
 <script src="features.js"></script>
+<script>
+(function(){
+  const btn = document.getElementById('hamburger-btn');
+  const drawer = document.getElementById('mobile-nav-drawer');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    drawer.classList.toggle('open');
+    document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      btn.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
 </body></html>

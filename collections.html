@@ -12,23 +12,23 @@
             theme: {
                 extend: {
                     "colors": {
-                        "surface-dim": "#001233",
+                        "surface-dim": "#010815",
                         "error": "#ffb4ab",
-                        "surface-variant": "#22345a",
+                        "surface-variant": "#0d1b2e",
                         "inverse-primary": "#5d5e5f",
                         "tertiary-fixed-dim": "#c8c6c3",
-                        "inverse-on-surface": "#1d2f55",
+                        "inverse-on-surface": "#020c1b",
                         "on-primary": "#2f3131",
                         "on-primary-fixed": "#1a1c1c",
                         "tertiary-container": "#20211f",
                         "on-primary-fixed-variant": "#454747",
                         "on-background": "#d9e2ff",
                         "on-error": "#690005",
-                        "surface-container-high": "#16294e",
+                        "surface-container-high": "#0f203b",
                         "secondary-fixed-dim": "#c6c6c6",
                         "on-surface": "#d9e2ff",
-                        "surface-container-low": "#041a3f",
-                        "surface": "#001233",
+                        "surface-container-low": "#020c1b",
+                        "surface": "#010815",
                         "on-tertiary-fixed": "#1b1c1a",
                         "on-error-container": "#ffdad6",
                         "secondary": "#c6c6c6",
@@ -38,17 +38,17 @@
                         "on-secondary-container": "#b8b8b8",
                         "on-tertiary-fixed-variant": "#474744",
                         "outline": "#8f9099",
-                        "surface-bright": "#26385e",
+                        "surface-bright": "#1a365d",
                         "on-secondary-fixed-variant": "#464747",
-                        "surface-container-highest": "#22345a",
+                        "surface-container-highest": "#1c325c",
                         "on-secondary-fixed": "#1a1c1c",
                         "on-primary-container": "#878888",
                         "primary-container": "#1f2121",
                         "primary-fixed": "#e2e2e2",
-                        "surface-container-lowest": "#000d29",
-                        "background": "#001233",
+                        "surface-container-lowest": "#000000",
+                        "background": "#000000",
                         "tertiary-fixed": "#e4e2de",
-                        "surface-container": "#091e43",
+                        "surface-container": "#0a1930",
                         "tertiary": "#c8c6c3",
                         "outline-variant": "#44464e",
                         "on-surface-variant": "#c5c6cf",
@@ -75,30 +75,12 @@
             }
         }
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .silver-gradient-text {
-            background: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .silver-border {
-            border: 1px solid transparent;
-            background-image: linear-gradient(#001233, #001233), linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-        }
-        .silver-glow:hover {
-            box-shadow: 0 0 15px rgba(216, 216, 216, 0.3);
-        }
-    </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-none bg-[#001233]/60 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-none">
-<a href="index.html" class="text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0]">
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-4 sm:px-8 md:px-12 py-4 md:py-6 max-w-none bg-[#010815]/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-none">
+<a href="index.html" class="text-xl md:text-2xl font-['Noto_Serif'] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#C0C0C0] via-[#D8D8D8] to-[#C0C0C0]">
             Achija Jewellers
         </a>
 <div class="hidden md:flex items-center gap-10 font-['Noto_Serif'] font-medium tracking-tight">
@@ -106,78 +88,106 @@
 <a class="text-[#C6C6C6]/70 hover:text-white transition-colors hover:scale-[1.02] transition-transform duration-300" href="legacy.html">About</a>
 <a class="text-[#C6C6C6]/70 hover:text-white transition-colors hover:scale-[1.02] transition-transform duration-300" href="inquiry.html">Inquiry</a>
 </div>
-<div class="flex items-center gap-6">
-<button class="text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
+<div class="flex items-center gap-4">
+<button class="hidden md:inline text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
 <span class="material-symbols-outlined">search</span>
 </button>
-<button class="text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
+<button class="hidden md:inline text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
 <span class="material-symbols-outlined">shopping_bag</span>
 </button>
-<button class="text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
+<button class="hidden md:inline text-[#C6C6C6] hover:scale-[1.02] transition-transform duration-300">
 <span class="material-symbols-outlined">person</span>
+</button>
+<button class="hamburger-btn md:hidden" id="hamburger-btn" aria-label="Open menu">
+<span></span><span></span><span></span>
 </button>
 </div>
 </nav>
-<main class="pt-32 pb-24 px-12 max-w-[1600px] mx-auto min-h-screen">
-<header class="mb-20">
-<h1 class="text-5xl font-headline font-bold tracking-tight mb-4 silver-gradient-text">Sterling Curations</h1>
-<p class="text-on-surface-variant max-w-lg font-body tracking-[0.05em] leading-relaxed">
+<!-- Mobile Nav Drawer -->
+<div id="mobile-nav-drawer">
+<a href="collections.html" class="active">Collections</a>
+<a href="legacy.html">About</a>
+<a href="inquiry.html">Inquiry</a>
+<div class="mobile-nav-footer">
+<a href="privacy_terms.html">Privacy</a>
+<a href="privacy_terms.html">Terms</a>
+</div>
+</div>
+<main class="pt-24 md:pt-32 pb-24 px-4 sm:px-8 md:px-12 max-w-[1600px] mx-auto min-h-screen">
+<header class="mb-10 md:mb-20">
+<h1 class="text-3xl md:text-5xl font-headline font-bold tracking-tight mb-4 silver-gradient-text">Sterling Curations</h1>
+<p class="text-on-surface-variant max-w-lg font-body tracking-[0.05em] leading-relaxed text-sm md:text-base">
                 Explore our signature collection of 925 Sterling Silver, where heritage craftsmanship meets contemporary visual silence.
             </p>
 </header>
-<div class="flex flex-col lg:flex-row gap-16">
+<div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
 <!-- Filters Sidebar -->
-<aside class="w-full lg:w-64 space-y-12 flex-shrink-0">
+<aside class="w-full lg:w-64 space-y-8 flex-shrink-0">
 <section>
-<h3 class="font-label uppercase tracking-[0.1em] text-[0.75rem] text-primary mb-6">Category</h3>
-<ul class="space-y-4">
-<li class="flex items-center justify-between group cursor-pointer">
-<span class="text-on-surface hover:text-white transition-colors tracking-wide">All Pieces</span>
-<span class="text-[0.65rem] text-outline">142</span>
+<h3 class="font-label uppercase tracking-[0.1em] text-[0.75rem] text-primary mb-5">Category</h3>
+<ul class="space-y-3.5">
+<li class="flex items-center justify-between group cursor-pointer" data-category="All">
+<span class="text-white font-semibold text-sm tracking-wide transition-colors">All Pieces</span>
+<span class="text-[0.65rem] text-outline">200</span>
 </li>
-<li class="flex items-center justify-between group cursor-pointer">
-<span class="text-on-surface-variant hover:text-white transition-colors tracking-wide">Signature Rings</span>
+<li class="flex items-center justify-between group cursor-pointer" data-category="Signature Rings">
+<span class="text-on-surface-variant hover:text-white text-sm tracking-wide transition-colors">Signature Rings</span>
 <span class="text-[0.65rem] text-outline">48</span>
 </li>
-<li class="flex items-center justify-between group cursor-pointer">
-<span class="text-on-surface-variant hover:text-white transition-colors tracking-wide">Artisan Chains</span>
+<li class="flex items-center justify-between group cursor-pointer" data-category="Artisan Chains">
+<span class="text-on-surface-variant hover:text-white text-sm tracking-wide transition-colors">Artisan Chains</span>
 <span class="text-[0.65rem] text-outline">32</span>
 </li>
-<li class="flex items-center justify-between group cursor-pointer">
-<span class="text-on-surface-variant hover:text-white transition-colors tracking-wide">Cuffs &amp; Bangles</span>
+<li class="flex items-center justify-between group cursor-pointer" data-category="Cuffs &amp; Bangles">
+<span class="text-on-surface-variant hover:text-white text-sm tracking-wide transition-colors">Cuffs &amp; Bangles</span>
 <span class="text-[0.65rem] text-outline">26</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer" data-category="Pendants">
+<span class="text-on-surface-variant hover:text-white text-sm tracking-wide transition-colors">Pendants</span>
+<span class="text-[0.65rem] text-outline">24</span>
+</li>
+<li class="flex items-center justify-between group cursor-pointer" data-category="Earrings">
+<span class="text-on-surface-variant hover:text-white text-sm tracking-wide transition-colors">Earrings</span>
+<span class="text-[0.65rem] text-outline">22</span>
 </li>
 </ul>
 </section>
 <section>
-<h3 class="font-label uppercase tracking-[0.1em] text-[0.75rem] text-primary mb-6">Purity</h3>
-<div class="flex items-center gap-3 group cursor-pointer">
+<h3 class="font-label uppercase tracking-[0.1em] text-[0.75rem] text-primary mb-5">Purity</h3>
+<div class="flex items-center gap-3 cursor-pointer">
 <div class="w-4 h-4 silver-border flex items-center justify-center">
 <div class="w-2 h-2 bg-primary"></div>
 </div>
-<span class="text-on-surface tracking-wide">925 Sterling Silver</span>
+<span class="text-on-surface tracking-wide text-sm">925 Sterling Silver</span>
 </div>
 </section>
 <section>
-<h3 class="font-label uppercase tracking-[0.1em] text-[0.75rem] text-primary mb-6">Price Range</h3>
-<div class="relative h-1 bg-outline-variant mt-8">
-<div class="absolute h-full bg-primary w-2/3"></div>
-<div class="absolute -top-1.5 left-0 w-4 h-4 bg-surface-bright silver-border"></div>
-<div class="absolute -top-1.5 left-2/3 w-4 h-4 bg-surface-bright silver-border"></div>
+<h3 class="font-label uppercase tracking-[0.1em] text-[0.75rem] text-primary mb-5">Price Range</h3>
+<div class="space-y-4">
+<input id="price-range" type="range" min="10000" max="200000" step="5000" value="200000"
+    class="w-full h-px appearance-none bg-outline-variant accent-[#1a365d] cursor-pointer">
+<div class="flex justify-between font-label text-[0.65rem] text-on-surface-variant tracking-widest">
+<span>₹10,000</span>
+<span id="price-display">₹2,00,000+</span>
 </div>
-<div class="flex justify-between mt-4 font-label text-[0.7rem] text-on-surface-variant tracking-widest">
-<span>₹20,000</span>
-<span>₹2,00,000+</span>
 </div>
 </section>
-<button class="w-full py-4 silver-border text-primary font-label tracking-[0.2em] uppercase text-[0.7rem] hover:silver-glow transition-all duration-300">
-                    Apply Filters
-                </button>
+<div class="space-y-3 pt-2">
+<button id="apply-filters-btn" class="w-full py-3.5 silver-border text-primary font-label tracking-[0.15em] uppercase text-[0.7rem] hover:silver-glow transition-all duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+Apply Filters
+</button>
+<button id="clear-filters-btn" class="w-full py-2.5 text-outline hover:text-white font-label tracking-[0.15em] uppercase text-[0.65rem] transition-colors">
+Clear All
+</button>
+</div>
 </aside>
 <!-- Product Grid -->
-<section class="flex-grow">
-<div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-20 gap-x-12">
-    <!-- Dynamic products will be injected here -->
+<section class="flex-grow min-w-0">
+<!-- Active Filters Bar -->
+<div id="active-filters-bar" class="hidden flex flex-wrap gap-2 mb-6"></div>
+<div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-y-16 gap-x-8 md:gap-x-12">
+    <!-- Dynamic products -->
 </div>
 <!-- Pagination -->
 <div class="mt-32 flex justify-center items-center gap-8">
@@ -191,9 +201,9 @@
 </div>
 </main>
 <!-- Footer -->
-<footer class="flex flex-col items-center gap-12 w-full bg-[#041A3F] full-width py-20 px-12 flat no shadows">
+<footer class="flex flex-col items-center gap-8 md:gap-12 w-full bg-[#020c1b] full-width py-16 md:py-20 px-4 sm:px-8 md:px-12 flat no shadows">
 <a href="index.html" class="text-xl font-['Noto_Serif'] text-[#C6C6C6]">Achija Jewellers</a>
-<div class="flex flex-wrap justify-center gap-10">
+<div class="flex flex-wrap justify-center gap-6 md:gap-10">
 <a class="font-['Inter'] tracking-[0.1em] uppercase text-[0.75rem] text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="collections.html">Collections</a>
 <a class="font-['Inter'] tracking-[0.1em] uppercase text-[0.75rem] text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="legacy.html">Legacy</a>
 <a class="font-['Inter'] tracking-[0.1em] uppercase text-[0.75rem] text-[#C6C6C6]/50 hover:text-white transition-colors duration-300" href="inquiry.html">Inquiry</a>
@@ -210,5 +220,25 @@
         </p>
 </footer>
 <script src="products.js"></script>
+<script src="cart.js"></script>
 <script src="features.js"></script>
+<script>
+(function(){
+  const btn = document.getElementById('hamburger-btn');
+  const drawer = document.getElementById('mobile-nav-drawer');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    drawer.classList.toggle('open');
+    document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      btn.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
 </body></html>
