@@ -43,3 +43,4 @@ const Cart = {
         return this.get().reduce((sum, i) => sum + i.qty, 0);
     }
 };
+window.Cart = Cart; 

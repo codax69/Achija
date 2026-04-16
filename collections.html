@@ -82,9 +82,10 @@
         },
       };
     </script>
+    <!-- FIXED: products.js and cart.js must load synchronously BEFORE features.js
+         so that window.PRODUCTS and window.Cart are available when features.js runs. -->
     <script src="products.js"></script>
     <script src="cart.js"></script>
-    <script src="features.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body
@@ -310,7 +311,7 @@
             id="product-grid"
             class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-y-16 gap-x-8 md:gap-x-12"
           >
-            <!-- Dynamic products -->
+            <!-- Dynamic products injected by features.js -->
           </div>
           <!-- Pagination -->
           <div class="mt-32 flex justify-center items-center gap-8">
@@ -386,6 +387,11 @@
         © 2024 Achija Jewellers. The Silver Heritage Standard.
       </p>
     </footer>
+
+    <!-- FIXED: features.js loaded at end of body so DOM is ready,
+         and AFTER products.js + cart.js have run in <head>. -->
+    <script src="features.js"></script>
+
     <script>
       (function () {
         const btn = document.getElementById("hamburger-btn");

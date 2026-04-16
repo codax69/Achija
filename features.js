@@ -1,12 +1,3 @@
-/* =====================================================
-   Achija Jewellers — Features Script
-   • Real cart (localStorage)
-   • Active filters (category + price) — fixed & unified
-   • Staggered product card animations
-   • Quick-view modal
-   • Search overlay
-   • Razorpay checkout
-   ===================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -15,6 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const fmt = price => new Intl.NumberFormat('en-IN', {
         style: 'currency', currency: 'INR', maximumFractionDigits: 0
     }).format(price);
+ 
+    const Cart = window.Cart;
+    if (!Cart) {
+        console.error('Achija: cart.js must be loaded before features.js and must expose window.Cart');
+        return;
+    }
 
     /* ─── 1. Inject Global UI ───────────────────────────── */
     const uiRoot = document.createElement('div');
@@ -213,17 +210,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="font-['Inter'] text-[#C6C6C6]/50 text-[0.65rem] tracking-[0.1em] uppercase mb-2">925 Sterling Silver</p>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-2 border border-[#44464E]/40 px-2 py-0.5">
-                                <button class="text-[#C6C6C6]/50 hover:text-white transition-colors" onclick="Cart.updateQty('${item.id}',-1); document.dispatchEvent(new Event('cart-updated'))">
+                                <button class="text-[#C6C6C6]/50 hover:text-white transition-colors" onclick="window.Cart.updateQty('${item.id}',-1); document.dispatchEvent(new Event('cart-updated'))">
                                     <span class="material-symbols-outlined text-sm">remove</span>
                                 </button>
                                 <span class="font-['Inter'] text-white text-xs w-4 text-center">${item.qty}</span>
-                                <button class="text-[#C6C6C6]/50 hover:text-white transition-colors" onclick="Cart.updateQty('${item.id}',1); document.dispatchEvent(new Event('cart-updated'))">
+                                <button class="text-[#C6C6C6]/50 hover:text-white transition-colors" onclick="window.Cart.updateQty('${item.id}',1); document.dispatchEvent(new Event('cart-updated'))">
                                     <span class="material-symbols-outlined text-sm">add</span>
                                 </button>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="font-['Inter'] text-white text-sm">${fmt(item.price * item.qty)}</span>
-                                <button class="text-[#C6C6C6]/30 hover:text-red-400 transition-colors" onclick="Cart.remove('${item.id}'); document.dispatchEvent(new Event('cart-updated'))">
+                                <button class="text-[#C6C6C6]/30 hover:text-red-400 transition-colors" onclick="window.Cart.remove('${item.id}'); document.dispatchEvent(new Event('cart-updated'))">
                                     <span class="material-symbols-outlined text-base">delete_outline</span>
                                 </button>
                             </div>
@@ -381,7 +378,13 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ─── 8. Collections Page: Filters + Animated Product Grid ── */
     const allProducts = window.PRODUCTS || [];
 
-    if (window.location.pathname.includes('collections.html')) {
+    /* BUG 2 FIX: Harden pathname check to support .html, no extension,
+       and trailing-slash variants all in one reliable check. */
+    const path = window.location.pathname;
+    const isCollections = path.includes('collections');
+    const isProductDetails = path.includes('product_details') || path.includes('product-details');
+
+    if (isCollections) {
         const productGrid = $('product-grid');
         const paginationContainer = $('pagination-container');
         const activeFiltersBar = $('active-filters-bar');
@@ -475,11 +478,13 @@ document.addEventListener('DOMContentLoaded', () => {
             renderActiveFilters();
         }
 
-        // Category click
+        /* BUG 3 FIX: Category click was missing the applyFilters() call —
+           state was updated but grid never re-rendered. */
         categoryItems.forEach(el => {
             el.addEventListener('click', () => {
                 activeCategory = el.dataset.category;
                 setActiveCategoryUI(activeCategory === 'All' ? null : el);
+                applyFilters(); // ← THIS WAS MISSING
             });
         });
 
@@ -636,18 +641,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Arrow pagination
-        document.querySelector('.material-symbols-outlined.cursor-pointer[class*="arrow_back"]') ||
-        document.querySelectorAll('.material-symbols-outlined.cursor-pointer').forEach(icon => {
+        /* BUG 4 FIX: The original code used a short-circuit `||` which meant
+           querySelectorAll was skipped whenever querySelector returned anything.
+           Fixed by iterating all matching icons directly with no short-circuit. */
+        document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
             if (icon.textContent.trim() === 'arrow_back') {
                 icon.addEventListener('click', () => {
-                    if (currentPage > 1) { currentPage--; renderProductsPage(currentPage); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+                    if (currentPage > 1) {
+                        currentPage--;
+                        renderProductsPage(currentPage);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
                 });
             }
             if (icon.textContent.trim() === 'arrow_forward') {
                 icon.addEventListener('click', () => {
                     const total = Math.ceil(filteredProducts.length / itemsPerPage);
-                    if (currentPage < total) { currentPage++; renderProductsPage(currentPage); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+                    if (currentPage < total) {
+                        currentPage++;
+                        renderProductsPage(currentPage);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
                 });
             }
         });
@@ -656,7 +670,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setActiveCategoryUI(null);
         renderProductsPage(1);
 
-    } else if (window.location.pathname.includes('product_details.html')) {
+    } else if (isProductDetails) {
         /* ── Product Details Page ── */
         const params = new URLSearchParams(window.location.search);
         const pid = params.get('id') || (allProducts[0] && allProducts[0].id);
