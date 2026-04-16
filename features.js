@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.Cart = Cart;
 
     /* ─── 4. Razorpay Checkout ───────────────────────────── */
-    const RAZORPAY_KEY = 'rzp_test_xxxxxxxxxxxxxxxx'; // ← Replace with your key
+    const RAZORPAY_KEY = 'rzp_test_SZLIBsr5d3H2uH'; // ← Replace with your key
 
     $('checkout-btn').addEventListener('click', () => {
         const items = Cart.get();
