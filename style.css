@@ -5,31 +5,36 @@
     font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
 }
 
-/* Silver gradient text (requires clip — can't do in Tailwind) */
+/* Premium gold gradient text */
+.premium-gradient-text,
+.premium-text,
 .silver-gradient-text,
 .silver-text {
-    background: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
+    background: linear-gradient(135deg, #c4a96e 0%, #e8d09e 50%, #c4a96e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-/* Silver border via border-image (not supported in Tailwind) */
+/* Premium border via border-image */
+.premium-border,
 .silver-border {
     border: 1px solid transparent;
-    border-image: linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%) 1;
+    border-image: linear-gradient(135deg, #c4a96e 0%, #e8d09e 50%, #c4a96e 100%) 1;
 }
 
+.premium-border-solid,
 .silver-border-solid {
     border: 1px solid transparent;
     background-image: linear-gradient(#010815, #010815),
-                      linear-gradient(135deg, #C0C0C0 0%, #D8D8D8 50%, #C0C0C0 100%);
+                      linear-gradient(135deg, #c4a96e 0%, #e8d09e 50%, #c4a96e 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
 }
 
+.premium-glow:hover,
 .silver-glow:hover {
-    box-shadow: 0 0 15px rgba(216, 216, 216, 0.3);
+    box-shadow: 0 0 15px rgba(196, 169, 110, 0.3);
 }
 
 /* Velvet dark radial bg */
